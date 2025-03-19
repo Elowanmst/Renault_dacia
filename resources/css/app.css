@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 /* Section générale */
 body {
-    font-family: 'Oswald', sans-serif;
+    /* font-family: 'Oswald', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -90,6 +94,7 @@ p.textsous{
     color: white;
     font-size: 16px;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)); /* Gradient noir transparent */
+    z-index: 20;
   }
   
  /* nav.mask {
@@ -144,27 +149,34 @@ p.textsous{
 /* Sections */
 section {
     padding: 40px 20px;
-    margin-bottom: 20px;
+    margin-bottom: 75px;
+    margin-left: 5px;
+    margin-right: 5px;
     background-color: #ffffff;
-    border-radius: 8px;
+    border-radius: 0px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 section#top {
-    background: -webkit-linear-gradient(114deg, #9b9b9b,#c3c3c3,#eaeaea);/* Chrome 10-25, Safari 5.1-6 */                          background: linear-gradient(114deg, #000000,#303030,#616161);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                             
+    background: -webkit-linear-gradient(114deg, #bd2222,#ffffff,#23317d);/* Chrome 10-25, Safari 5.1-6 */                                       
     color: #ffffff;
     text-align: center;
     padding: 60px 20px;
+    margin-left: 0;
+    margin-right: 0;
 }
-#top h1 {
-    color: white;
+#top h2 {
+    color: rgb(0, 0, 0);
+}
+#top p{
+    color: rgb(0, 0, 0);
 }
 
-section#service, section#garage, section#recrutement, section#loc {
+section#service, section#garage, section#recrutement, section#loc, section#contact {
     border-left: 5px solid #000000;
 }
 
-/* Boutons */
+/*Boutons*/
 button, .btn {
     display: inline-block;
     background-color: #ffcc00;
@@ -180,7 +192,7 @@ button, .btn {
 
 button:hover, .btn:hover {
     background-color: #e6b800;
-}
+} 
 
 /* Listes personnalisées */
 .custom-list {
@@ -216,6 +228,7 @@ button:hover, .btn:hover {
     flex: 1 1 calc(33.333% - 40px);
     max-width: calc(33.333% - 40px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
 }
 
 .card:hover {
