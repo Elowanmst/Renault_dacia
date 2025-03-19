@@ -27,17 +27,6 @@
         </ul>
     </nav>
 
-    <header>
-        <div class="hero">
-            <div class="petit-carre">
-                <h1 class="titre">
-                    <img src="img/renault-dacia.png" alt="Dacia Logo" class="logo">
-                </h1>
-                <p class="textsous">📍 Saint Gilles Croix de Vie</p>
-            </div>
-        </div>
-    </header>
-
     <main>
         @yield('content')
     </main>

@@ -11,6 +11,17 @@
             .then(data => document.getElementById("navbar-container").innerHTML = data);
     </script> --}}
 
+    <header>
+        <div class="hero">
+            <div class="petit-carre">
+                <h1 class="titre">
+                    <img src="img/renault-dacia.png" alt="Dacia Logo" class="logo">
+                </h1>
+                <p class="textsous">📍 Saint Gilles Croix de Vie</p>
+            </div>
+        </div>
+    </header>
+
 
 
     <section id="top">
