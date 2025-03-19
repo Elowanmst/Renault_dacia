@@ -33,9 +33,9 @@
 
 
     <section id="service">
-        <h3>Nos véhicule d'occasion</h3>
+        <h3>Nos véhicules d'occasion</h3>
 
-        <h3>Nos véhicule neuf</h3>
+        <h3>Nos véhicules neuf</h3>
 
         <h3>Expert ZE</h3>
 
@@ -47,7 +47,7 @@
 
     <section id="garage">
 
-    <h3>Notre equipe</h3>
+    <h3>Notre équipe</h3>
 
 
     <div class="solution-content">
@@ -78,7 +78,7 @@
                     </ul>
                 </div>
                 <div class="card">
-                    <h4>reparation en tout genre</h4>
+                    <h4>reparations en tout genre</h4>
                     <p>sous service</p>
                     <p>cest quoi une reparation</p>
                     <ul class="custom-list">
@@ -111,10 +111,10 @@
     </section>
 
     <section id="loc">
-        <h2>Nous trouvez</h2>
+        <h2>Nous trouver</h2>
         <h3>14 route de la Roche - 85800 Saint Gilles Croix de Vie</h3>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2736.5910320520948!2d-1.9142408236174886!3d46.69407212112066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48045652dd3bba83%3A0x81845e7725dcbe2e!2sGarage%20Renault%2FDacia%20Rond%20Point%20de%20L&#39;Europe%20Automobiles!5e0!3m2!1sfr!2sfr!4v1742247546947!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <h3>Horaire d'ouverture</h3>
+        <h3>Horaires d'ouverture</h3>
         <table class="table-horaires">
             {{-- <caption>Horaires d'ouverture</caption> --}}
             <thread>
@@ -175,7 +175,7 @@
 
 
     <section id="contact">
-        <h2>nous contactez<h2>
+        <h2>Nous contacter<h2>
 
     </section>
 
