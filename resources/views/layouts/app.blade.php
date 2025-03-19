@@ -14,12 +14,13 @@
     @vite(['resources/css/app.css'])
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
     <link rel="icon" type="image/gif" href="img/favicon-renault.svg"/>
+
 </head>
 
 
 <body>
     <nav class="nav mask">
-        <div class="nav-title"> Garage RENAULT - DACIA</div>
+        <div class="nav-title"> Garage du Centre</div>
         <ul class="nav-links list">
 
             @auth

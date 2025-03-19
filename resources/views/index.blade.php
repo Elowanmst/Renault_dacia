@@ -26,7 +26,7 @@
 
     <section id="top">
         <div class="container">
-            <h2>Bienvenue au garage Renault du rond point de l'Europe</h2>
+            <h2>Bienvenue au garage du Centre</h2>
             <p>Réparations, maintenance, achat, revente</p>
         </div>
     </section>
@@ -114,8 +114,8 @@
 
     <section id="loc">
         <h2>Nous trouver</h2>
-        <h3>14 route de la Roche - 85800 Saint Gilles Croix de Vie</h3>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2736.5910320520948!2d-1.9142408236174886!3d46.69407212112066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48045652dd3bba83%3A0x81845e7725dcbe2e!2sGarage%20Renault%2FDacia%20Rond%20Point%20de%20L&#39;Europe%20Automobiles!5e0!3m2!1sfr!2sfr!4v1742247546947!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <h3>84 Boulevard Georges Pompidou - 85800 Saint Gilles Croix de Vie</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2736.1941415317524!2d-1.9522203236170579!3d46.7019038711212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4804f88345397091%3A0x17682f4bf879b4b5!2sGarage%20Du%20Centre!5e0!3m2!1sfr!2sfr!4v1742403150729!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <h3>Horaires d'ouverture</h3>
         <table class="table-horaires">
             {{-- <caption>Horaires d'ouverture</caption> --}}
@@ -135,22 +135,22 @@
             </tr>
             <tr>
                 <td>Mardi</td>
-                <td>08:30 - 12:00</td>
+                <td>08:00 - 12:00</td>
                 <td>14:00 - 18:00</td>
             </tr>
             <tr>
                 <td>Mercredi</td>
-                <td>08:30 - 12:00</td>
+                <td>08:00 - 12:00</td>
                 <td>14:00 - 18:00</td>
             </tr>
             <tr>
                 <td>Jeudi</td>
-                <td>08:30 - 12:00</td>
+                <td>08:00 - 12:00</td>
                 <td>14:00 - 18:00</td>
             </tr>
             <tr>
                 <td>Vendredi</td>
-                <td>08:30 - 12:00</td>
+                <td>08:00 - 12:00</td>
                 <td>14:00 - 18:00</td>
             </tr>
             <tr>
@@ -177,12 +177,13 @@
 
 
     <section id="contact">
-        <h2>Nous contacter<h2>
+        <h2>Contact</h2>
+        
 
     </section>
 
     <footer>
-        <p>© 2021 - Garage  RENAULT | DACIA  Rond-Point de l'Europe</p>
+        <p>© 2021 - Garage du Centre RENAULT | DACIA  </p>
 
     </footer>
 
