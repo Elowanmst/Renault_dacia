@@ -33,6 +33,7 @@
 
 
     <section id="service">
+        <h2>Nos services</h2>
         <h3>Nos véhicules d'occasion</h3>
 
         <h3>Nos véhicules neuf</h3>
@@ -46,6 +47,7 @@
 
 
     <section id="garage">
+    <h2>Votre garage</h2>
 
     <h3>Notre équipe</h3>
 
