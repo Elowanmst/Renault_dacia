@@ -19,14 +19,30 @@
 
 <body>
     <nav class="nav mask">
-        <div class="nav-title">Garage RENAULT - DACIA</div>
+        <div class="nav-title"> Garage RENAULT - DACIA</div>
         <ul class="nav-links list">
-            <li><a href="#top">Accueil</a></li>
-            <li><a href="#service">Nos services</a></li>
-            <li><a href="#garage">Votre garage</a></li>
-            <li><a href="#recrutement">Recrutement</a></li>
-            <li><a href="#loc">Nous trouvez</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+            @auth
+                <li><a href="#service">Nos services</a></li>
+                <li><a href="#garage">Votre garage</a></li>
+                <li><a href="#recrutement">Recrutement</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="{{ route('admin') }}">Admin</a></li>
+                <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+
+            @else
+                <li><a href="{{ route('index') }}">Accueil</a></li>
+                <li><a href="#service">Nos services</a></li>
+                <li><a href="#garage">Votre garage</a></li>
+                <li><a href="#recrutement">Recrutement</a></li>
+                <li><a href="#loc">Nous trouver</a></li>
+                <li><a href="#contact">Contact</a></li>
+            @endauth
         </ul>
     </nav>
 
