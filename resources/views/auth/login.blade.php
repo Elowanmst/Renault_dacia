@@ -1,16 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-400 to-purple-500">
-        <div class="w-full max-w-md p-8 bg-white shadow-2xl rounded-lg text-center transform transition duration-500 hover:shadow-3xl">
-            <h1 class="text-3xl font-extrabold mb-6 text-gray-800">Welcome</h1>
-            @if(Auth::check())
-                <a href="{{ route('jsonld-generator') }}" class="text-white bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Go</a>
-            @else
-                <p class="text-red-600 mb-6">Please log in to access the admin.</p>
-                <a href="{{ route('login') }}" class="text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Login</a>
-                <a href="{{ route('register') }}" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Register</a>
-            @endif
+
+    <div style="display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+        <div style="max-width: 400px; width: 100%; padding: 20px; box-sizing: border-box;">
+            <h2 style="font-size: 24px; font-weight: bold; margin-bottom: 16px; text-align: center;">Connexion</h2>
+
+            <form method="POST" action="{{ route('login') }}" style="display: flex; flex-direction: column; gap: 16px;">
+                @csrf
+
+                <div>
+                    <label for="email" style="display: block; font-size: 14px; font-weight: 500; color: #4a4a4a;">Email</label>
+                    <input type="email" name="email" id="email" required style="margin-top: 4px; display: block; width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);">
+                </div>
+
+                <div>
+                    <label for="password" style="display: block; font-size: 14px; font-weight: 500; color: #4a4a4a;">Mot de passe</label>
+                    <input type="password" name="password" id="password" required style="margin-top: 4px; display: block; width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);">
+                </div>
+
+                <button type="submit">
+                    Login
+                </button>
+
+                @if ($errors->any())
+                    <div style="margin-top: 16px; background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; padding: 8px; border-radius: 4px;" role="alert">
+                        <ul style="list-style-type: disc; padding-left: 20px; margin: 0;">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </form>
+
+            <p style="margin-top: 16px; font-size: 14px; text-align: center;">Pas encore de compte ? <a href="{{ route('register') }}" style="color: #4f46e5; text-decoration: none;">Inscris-toi ici</a></p>
         </div>
     </div>
 @endsection
