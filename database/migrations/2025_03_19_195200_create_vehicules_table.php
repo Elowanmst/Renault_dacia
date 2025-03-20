@@ -11,19 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('vehicules', function (Blueprint $table) {
+        Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('image')->nullable();
-            $table->string('marque')->nullable();
-            $table->string('modele')->nullable();
-            $table->string('carburant')->nullable();
+            $table->string('picture')->nullable();
+            $table->string('brand')->nullable();
+            $table->string('model')->nullable();
+            $table->string('fuel')->nullable();
             $table->string('description')->nullable();
-            $table->integer('annee')->nullable();
-            $table->integer('kilometrage')->nullable();
+            $table->integer('year')->nullable();
+            $table->integer('mileage')->nullable();
             $table->string('transmission')->nullable();
             $table->integer('puissance')->nullable();
-            $table->decimal('prix', 10, 2)->nullable();
+            $table->decimal('price', 10, 2)->nullable();
             $table->enum('type', ['new', 'used'])->default('new');
         });
     }
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('vehicules');
+        Schema::dropIfExists('vehicles');
     }
 };

@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Vehicule;
+use App\Models\Vehicle;
 
-class VehiculeController extends Controller
+class VehicleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $vehicules = Vehicule::paginate(5);
-        return view('vehicule.index', compact('vehicules'));
+        $vehicles = Vehicle::paginate(5);
+        return view('vehicle.index', compact('vehicles'));
     }
 
     /**
@@ -21,7 +21,7 @@ class VehiculeController extends Controller
      */
     public function create()
     {
-        return view('vehicule.create');
+        return view('vehicle.create');
     }
 
     /**
@@ -36,9 +36,9 @@ class VehiculeController extends Controller
             'stock' => 'required',
         ]);
 
-        Vehicule::create($data);
+        Vehicle::create($data);
 
-        return redirect()->route('vehicules.index');
+        return redirect()->route('vehicles.index');
     }
 
     /**
@@ -46,8 +46,8 @@ class VehiculeController extends Controller
      */
     public function show(string $id)
     {
-        $vehicule = Vehicule::findOrFail($id);
-        return view('vehicule.show', compact('vehicule'));
+        $vehicle = Vehicle::findOrFail($id);
+        return view('vehicule.show', compact('vehicle'));
     }
 
     /**
@@ -55,8 +55,8 @@ class VehiculeController extends Controller
      */
     public function edit(string $id)
     {
-        $vehicule = Vehicule::findOrFail($id);
-        return view('vehicule.edit', compact('vehicule'));
+        $vehicle = Vehicle::findOrFail($id);
+        return view('vehicule.edit', compact('vehicle'));
     }
 
     /**
@@ -69,9 +69,9 @@ class VehiculeController extends Controller
             'description' => 'required',
         ]);
 
-        Vehicule::where('id', $id)->update($data);
+        Vehicle::where('id', $id)->update($data);
 
-        return redirect()->route('vehicules.index');
+        return redirect()->route('vehicles.index');
     }
 
     /**
@@ -79,8 +79,9 @@ class VehiculeController extends Controller
      */
     public function destroy(string $id)
     {
-        Vehicule::destroy($id);
-        return redirect()->route('vehicules.index');
+        Vehicle::destroy($id);
+        return redirect()->route('vehicles.index');
     }
 }
+
 

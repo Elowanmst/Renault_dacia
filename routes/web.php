@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserAuthController;
+use App\Http\Controllers\VehicleController;
+
 
 Route::get('/', function () {
     return view('index');
@@ -17,3 +19,4 @@ Route::get('/register', [UserAuthController::class, 'showRegisterForm'])->middle
 Route::post('/register', [UserAuthController::class, 'register']);
 Route::post('/logout', [UserAuthController::class, 'logout'])->name('logout');
 
+Route::resource('vehicles', VehicleController::class);

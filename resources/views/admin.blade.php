@@ -5,7 +5,7 @@
     <div class="">
 
         <div">
-            <h2>My Admin</h2>
+            <h2>My Dashboard</h2>
         </div>    
         
         <form method="POST" action="{{ route('logout') }}">
