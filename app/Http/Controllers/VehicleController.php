@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Vehicle;
+use App\Models\Vehicles;
 
 class VehicleController extends Controller
 {
@@ -12,7 +12,7 @@ class VehicleController extends Controller
      */
     public function index()
     {
-        $vehicles = Vehicle::paginate(5);
+        $vehicles = Vehicles::paginate(5);
         return view('vehicle.index', compact('vehicles'));
     }
 
@@ -30,13 +30,22 @@ class VehicleController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'price' => 'required|numeric',
-            'stock' => 'required',
+            'name' => 'nullable',
+            'description' => 'nullable',
+            'price' => 'nullable|numeric',
+            'stock' => 'nullable',
+            'picture' => 'nullable|string',
+            'brand' => 'nullable|string',
+            'model' => 'nullable|string',
+            'fuel' => 'nullable|string',
+            'year' => 'nullable|integer',
+            'mileage' => 'nullable|integer',
+            'transmission' => 'nullable|string',
+            'puissance' => 'nullable|integer',
+            'type' => 'nullable|in:new,used',
         ]);
 
-        Vehicle::create($data);
+        Vehicles::create($data);
 
         return redirect()->route('vehicles.index');
     }
@@ -46,8 +55,8 @@ class VehicleController extends Controller
      */
     public function show(string $id)
     {
-        $vehicle = Vehicle::findOrFail($id);
-        return view('vehicule.show', compact('vehicle'));
+        $vehicle = Vehicles::findOrFail($id);
+        return view('vehicle.show', compact('vehicle'));
     }
 
     /**
@@ -55,8 +64,8 @@ class VehicleController extends Controller
      */
     public function edit(string $id)
     {
-        $vehicle = Vehicle::findOrFail($id);
-        return view('vehicule.edit', compact('vehicle'));
+        $vehicle = Vehicles::findOrFail($id);
+        return view('vehicle.edit', compact('vehicle'));
     }
 
     /**
@@ -69,7 +78,7 @@ class VehicleController extends Controller
             'description' => 'required',
         ]);
 
-        Vehicle::where('id', $id)->update($data);
+        Vehicles::where('id', $id)->update($data);
 
         return redirect()->route('vehicles.index');
     }
@@ -79,7 +88,7 @@ class VehicleController extends Controller
      */
     public function destroy(string $id)
     {
-        Vehicle::destroy($id);
+        Vehicles::destroy($id);
         return redirect()->route('vehicles.index');
     }
 }

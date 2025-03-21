@@ -18,18 +18,14 @@
         
         <div class="admin-section">
             <h3>Manage Cars</h3>
-            <a href="" class="btn btn-primary">View All Cars</a>
-            <a href="" class="btn btn-success">Add New Car</a>
-        </div>
-            <h3>Manage Cars</h3>
-            <a href="" class="btn btn-primary">View All Cars</a>
-            <a href="" class="btn btn-success">Add New Car</a>
+            <a href="{{ route('vehicles.index') }}" class="btn btn-primary">View All Cars</a>
+            <a href="{{ route('vehicles.create') }}" class="btn btn-success">Add New Car</a>
         </div>
 
         <div class="admin-section">
-            <h3>Manage Appointments</h3>
-            <a href="" class="btn btn-primary">View All Appointments</a>
-            <a href="" class="btn btn-success">Schedule New Appointment</a>
+            <h3>Manage Services</h3>
+            <a href="" class="btn btn-primary">View All Services</a>
+            <a href="" class="btn btn-success">Add new Services</a>
         </div>
 
         <div class="admin-section">
@@ -37,12 +33,11 @@
             <a href="" class="btn btn-primary">View All Customers</a>
             <a href="" class="btn btn-success">Add New Customer</a>
         </div>
+
+        <div class="admin-section">
+            <h3>Manage Accounts</h3>
+            <a href="{{ route('users') }}" class="btn btn-primary">View All Accounts</a>
+            <a href="" class="btn btn-success">Add New Account</a>
+        </div>
     </div>
-
-
-
-
-
-
-
 @endsection

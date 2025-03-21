@@ -4,7 +4,7 @@
 
     <div>
         <div>
-            <h2>Créer un compte</h2>
+            <h2>Créer un utilisateur</h2>
 
             <form method="POST" action="{{ route('register') }}">
                 @csrf
@@ -41,6 +41,7 @@
                     </div>
                 @endif
             </form>
+
 
             {{-- <p>Déjà un compte ? <a href="{{ route('login') }}">Se connecter ici</a></p> --}}
         </div>
