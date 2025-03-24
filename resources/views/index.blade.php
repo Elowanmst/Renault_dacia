@@ -184,6 +184,8 @@
 
     <footer>
         <p>© 2021 - Garage du Centre RENAULT | DACIA  </p>
+        <br>
+        <p>create by ec-craft.fr  </p>
 
     </footer>
 
