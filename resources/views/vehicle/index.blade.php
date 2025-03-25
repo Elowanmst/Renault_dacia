@@ -17,10 +17,10 @@
                 <p>Marque : {{ $vehicle->brand }}</p>
                 <p>Année : {{ $vehicle->year }}</p>
                 <p>Prix : {{ $vehicle->price }} €</p>
-
+{{-- 
                 @if ($image = $vehicle->getFirstMedia())
                     <img src="{{ $image->getUrl() }}" alt="Image du véhicule" class="w-32 h-32 object-cover">
-                @endif
+                @endif --}}
                 <br>
             @endforeach
         </ul>

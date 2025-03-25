@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Vehicles;
+use App\Models\Vehicle;
 
 class VehicleController extends Controller
 {
@@ -12,7 +12,7 @@ class VehicleController extends Controller
      */
     public function index()
     {
-        $vehicles = Vehicles::paginate(5);
+        $vehicles = Vehicle::paginate(5);
         return view('vehicle.index', compact('vehicles'));
     }
 
@@ -45,7 +45,7 @@ class VehicleController extends Controller
             'type' => 'nullable|in:new,used',
         ]);
 
-        Vehicles::create($data);
+        Vehicle::create($data);
 
         return redirect()->route('vehicles.index');
     }
@@ -55,7 +55,7 @@ class VehicleController extends Controller
      */
     public function show(string $id)
     {
-        $vehicle = Vehicles::findOrFail($id);
+        $vehicle = Vehicle::findOrFail($id);
         return view('vehicle.show', compact('vehicle'));
     }
 
@@ -64,7 +64,7 @@ class VehicleController extends Controller
      */
     public function edit(string $id)
     {
-        $vehicle = Vehicles::findOrFail($id);
+        $vehicle = Vehicle::findOrFail($id);
         return view('vehicle.edit', compact('vehicle'));
     }
 
@@ -78,7 +78,7 @@ class VehicleController extends Controller
             'description' => 'required',
         ]);
 
-        Vehicles::where('id', $id)->update($data);
+        Vehicle::where('id', $id)->update($data);
 
         return redirect()->route('vehicles.index');
     }
@@ -88,7 +88,7 @@ class VehicleController extends Controller
      */
     public function destroy(string $id)
     {
-        Vehicles::destroy($id);
+        Vehicle::destroy($id);
         return redirect()->route('vehicles.index');
     }
 }
