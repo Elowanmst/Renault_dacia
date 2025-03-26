@@ -36,8 +36,7 @@
 
         <div class="admin-section">
             <h3>Manage Accounts</h3>
-            <a href="{{ route('users') }}" class="btn btn-primary">View All Accounts</a>
-            <a href="" class="btn btn-success">Add New Account</a>
+            <a href="{{ route('users.index') }}" class="btn btn-primary">View All Accounts</a>
         </div>
     </div>
 @endsection
