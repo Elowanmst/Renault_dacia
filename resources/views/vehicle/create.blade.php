@@ -6,10 +6,6 @@
         <form action="{{ route('vehicles.store') }}" method="post">
             @csrf
             <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" class="form-control" >
-            </div>
-            <div class="form-group">
                 <label for="brand">Brand</label>
                 <input type="text" name="brand" class="form-control" >
             </div>
@@ -24,6 +20,10 @@
             <div class="form-group">
                 <label for="color">Color</label>
                 <input type="text" name="color" class="form-control" >
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" name="price" class="form-control" >
             </div>
             <div class="form-group">
                 <label for="license_plate">License Plate</label>

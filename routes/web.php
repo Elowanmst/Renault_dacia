@@ -9,7 +9,7 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/admin', function () {
-    return view('admin');
+    return view('dashboard');
 })->middleware(['auth'])->name('admin');
 
 

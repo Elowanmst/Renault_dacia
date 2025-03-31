@@ -1,31 +1,56 @@
-@extends('layouts.app')
+@extends('layouts.admin')
+
+@section('styles')
+    @vite(['resources/css/admin/vehicles.css'])
+    @vite(['resources/css/admin/dashboard.css'])
+@endsection
 
 @section('content')
-    <div class="container bg-slate-50 mx-auto p-4">
+    <div class="vehicle-container">
 
-        <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" href="/vehicles/create">
-            Ajouter un véhicule
-        </a>
 
-        <h1>Véhicules</h1>
+        <div class="vehicle-list">
+            
+            <h1>Mes véhicules</h1>
 
-        <ul class="list-none p-0 m-0 mt-4 space-y-4 bg-slate-100 rounded-full">
-            @foreach ($vehicles as $vehicle)
-                <h2 class="text-xl">
-                    <a href="{{ route('vehicles.show', $vehicle) }}">{{ $vehicle->model }}</a>
-                </h2>
-                <p>Marque : {{ $vehicle->brand }}</p>
-                <p>Année : {{ $vehicle->year }}</p>
-                <p>Prix : {{ $vehicle->price }} €</p>
-{{-- 
-                @if ($image = $vehicle->getFirstMedia())
-                    <img src="{{ $image->getUrl() }}" alt="Image du véhicule" class="w-32 h-32 object-cover">
-                @endif --}}
-                <br>
-            @endforeach
-        </ul>
+            <a class="btn" href="{{ route('vehicles.create') }}">
+                Ajouter un véhicule
+            </a>
+
+            <table class="vehicle-details">
+                <thead>
+                    <tr>    
+                        <th>Marque</th>
+                        <th>Modèle</th>
+                        <th>Année</th>
+                        <th>Prix</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($vehicles as $vehicle)
+                    <tr onclick="window.location='{{ route('vehicles.show', $vehicle) }}'" style="cursor: pointer;">
+                        <td>{{ $vehicle->brand }}</td>
+                        <td>{{ $vehicle->model }}</td>
+                        <td>{{ $vehicle->year }}</td>
+                        <td>{{ $vehicle->price }} €</td>
+                        <td>
+                            <a href="{{ route('vehicles.edit', $vehicle) }}">Modifier</a>
+                            <form action="{{ route('vehicles.destroy', $vehicle) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit">Supprimer</button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+
+        </div>
 
         {{ $vehicles->links() }}
+
     </div>
 
 @endsection
