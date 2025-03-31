@@ -11,19 +11,19 @@
 
         <div class="vehicle-list">
             
-            <h1>Mes véhicules</h1>
+            <h1>{{__('vehicles list')}}</h1>
 
             <a class="btn" href="{{ route('vehicles.create') }}">
-                Ajouter un véhicule
+                {{ __('add vehicle') }}
             </a>
 
             <table class="vehicle-details">
                 <thead>
                     <tr>    
-                        <th>Marque</th>
-                        <th>Modèle</th>
-                        <th>Année</th>
-                        <th>Prix</th>
+                        <th>{{ __('brand') }}</th>
+                        <th>{{ __('model') }}</th>
+                        <th>{{ __('year') }}</th>
+                        <th>{{ __('price') }}</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -35,11 +35,11 @@
                         <td>{{ $vehicle->year }}</td>
                         <td>{{ $vehicle->price }} €</td>
                         <td>
-                            <a href="{{ route('vehicles.edit', $vehicle) }}">Modifier</a>
+                            <a href="{{ route('vehicles.edit', $vehicle) }}">{{ __('edit') }}</a>
                             <form action="{{ route('vehicles.destroy', $vehicle) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit">Supprimer</button>
+                                <button type="submit">{{ __('delete') }}</button>
                             </form>
                         </td>
                     </tr>

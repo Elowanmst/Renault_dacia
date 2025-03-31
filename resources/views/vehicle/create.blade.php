@@ -1,35 +1,35 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
     <div class="container">
-        <h1>Create Vehicle</h1>
+        <h1>{{ __('add vehicle') }}</h1>
         <form action="{{ route('vehicles.store') }}" method="post">
             @csrf
             <div class="form-group">
-                <label for="brand">Brand</label>
+                <label for="brand">{{ __('brand') }}</label>
                 <input type="text" name="brand" class="form-control" >
             </div>
             <div class="form-group">
-                <label for="model">Model</label>
+                <label for="model">{{ __('model') }}</label>
                 <input type="text" name="model" class="form-control" >
             </div>
             <div class="form-group">
-                <label for="year">Year</label>
+                <label for="year">{{ __('year') }}</label>
                 <input type="number" name="year" class="form-control" >
             </div>
             <div class="form-group">
-                <label for="color">Color</label>
+                <label for="color">{{ __('color') }}</label>
                 <input type="text" name="color" class="form-control" >
             </div>
             <div class="form-group">
-                <label for="price">Price</label>
+                <label for="price">{{ __('price') }}</label>
                 <input type="number" name="price" class="form-control" >
             </div>
             <div class="form-group">
-                <label for="license_plate">License Plate</label>
+                <label for="license_plate">{{ __('license plate') }}</label>
                 <input type="text" name="license_plate" class="form-control" >
             </div>
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" class="btn btn-primary">{{ __('create') }}</button>
         </form>
     </div>
 @endsection
