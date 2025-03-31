@@ -7,15 +7,15 @@
 
 @section('content')
 <div class="user-container">
-    <h1 class="mb-4">Liste des utilisateurs</h1>
-    <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">Créer un nouvel utilisateur</a>
+    <h1 class="mb-4">{{__('Users list')}}</h1>
+    <a href="{{ route('users.create') }}" class="btn btn-primary mb-3">{{__('create a new user')}}</a>
     <table class="table table-striped table-bordered">
         <thead class="thead-dark">
             <tr>
                 <th>ID</th>
-                <th>Nom</th>
+                <th>{{ __('username') }}</th>
                 <th>Email</th>
-                <th>Date de création</th>
+                <th>{{ __('created at') }}</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -27,7 +27,7 @@
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->created_at->format('d/m/Y') }}</td>
                 <td>
-                    <a href="{{ route('users.show', $user) }}" class="btn btn-info btn-sm">Voir</a>
+                    <a href="{{ route('users.show', $user) }}" class="btn btn-info btn-sm">{{ __('view') }}</a>
                 </td>
             </tr>
             @endforeach
