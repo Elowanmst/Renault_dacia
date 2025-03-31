@@ -12,6 +12,16 @@
     <title>Garage Renault</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     @vite(['resources/css/app.css'])
+    
+    {{-- @vite(['resources/css/admin/users.css'])
+    @vite(['resources/css/admin/services.css']) --}}
+    {{-- @vite(['resources/css/admin/dashboard.css']) --}}
+
+    {{-- Section pour les styles spécifiques --}}
+    @yield('styles')
+
+    @livewireStyles
+
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
     <link rel="icon" type="image/gif" href="img/favicon-renault.svg"/>
 
@@ -53,6 +63,8 @@
         </div>
         
     </main>
+
+    @livewireScripts
 
 </body>
 

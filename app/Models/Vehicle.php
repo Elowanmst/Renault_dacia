@@ -13,6 +13,7 @@ class Vehicle extends Model
         'fuel',
         'description',
         'year',
-        'mile'
+        'mile',
+        'price'
     ];
 }
