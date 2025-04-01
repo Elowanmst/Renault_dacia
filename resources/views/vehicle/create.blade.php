@@ -1,5 +1,10 @@
 @extends('layouts.admin')
 
+@section('styles')
+    @vite(['resources/css/admin/vehicles.css'])
+    {{-- @vite(['resources/css/admin/dashboard.css']) --}}
+@endsection
+
 @section('content')
     <div class="container">
         <h1>{{ __('add vehicle') }}</h1>
