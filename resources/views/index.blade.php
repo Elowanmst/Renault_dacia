@@ -33,7 +33,7 @@
 
 
     <section id="service">
-        <h2>Nos services</h2>
+        <h2>Nos Véhicules</h2>
         <h3>Nos véhicules d'occasion</h3>
 
         <h3>Nos véhicules neuf</h3>
