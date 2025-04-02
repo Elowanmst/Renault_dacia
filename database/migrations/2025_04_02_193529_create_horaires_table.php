@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->enum('day', ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'])->default('lundi');
-            $table->time('morning-opening')->nullable();
-            $table->time('morning-closing')->nullable();
-            $table->time('afternoon-opening')->nullable();
-            $table->time('afternoon-closing')->nullable();
+            $table->time('morningO')->nullable();
+            $table->time('morningC')->nullable();
+            $table->time('afternoonO')->nullable();
+            $table->time('afternoonC')->nullable();
         });
     }
 
