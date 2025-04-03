@@ -15,6 +15,7 @@ class HoraireController extends Controller
         $horaires = Horaire::paginate(10);
         return view('horaire.index', compact('horaires'));
     }
+    
 
     /**
      * Show the form for creating a new resource.
