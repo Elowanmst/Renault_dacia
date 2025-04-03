@@ -5,6 +5,7 @@ use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\HoraireController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('index');
@@ -29,3 +30,5 @@ Route::resource('services', ServiceController::class)->only(['show', 'index']);
 
 Route::resource('horaires', HoraireController::class)->except(['show', 'index'])->middleware(['auth']);
 Route::resource('horaires', HoraireController::class)->only(['show', 'index']);
+
+Route::get('/', [HomeController::class, 'index'])->name('index');
