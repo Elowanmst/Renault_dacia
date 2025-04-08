@@ -9,13 +9,14 @@
 <div class="main-content">
 
     <a href="{{ route('horaires.index') }}">{{ __('back') }}</a>
-    
+
     <h1>{{ __('edit opening hours') }}</h1>
     <form action="{{ route('horaires.update', $horaires->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="form-group">
-            <h2>{{$horaires->day}}</h2>
+            <label for="day">{{ __('day') }}</label>
+            <input type="text" class="form-control" id="day" name="day" value="{{ $horaires->day }}" required readonly>
         </div>
         <div class="form-group">
             <label for="morningO">{{ __('morningOpening') }}</label>
