@@ -29,7 +29,9 @@
 
     <div class="sidebar">
         <h2>Admin Panel</h2>
-    
+        
+        <a href="{{ route('index') }}">🏠</a>
+
         <ul>
             <li><a href="{{ route('admin') }}">Dashboard</a></li>
             <li><a href="{{ route('users.index') }}">Users</a></li>

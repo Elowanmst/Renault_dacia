@@ -6,10 +6,8 @@
     <form action="{{ route('horaires.update', $horaires->id) }}" method="POST">
         @csrf
         @method('PUT')
-        
         <div class="form-group">
-            <label for="day">{{ __('day') }}</label>
-            <input type="text" class="form-control" id="day" name="day" value="{{ $horaires->day }}" required>
+            <h2>{{$horaires->day}}</h2>
         </div>
         <div class="form-group">
             <label for="morningO">{{ __('morningOpening') }}</label>

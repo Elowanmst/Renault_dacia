@@ -11,8 +11,20 @@
         <form action="{{ route('horaires.store') }}" method="post">
             @csrf
             <div class="form-group">
+                {{-- <label for="day">{{ __('day') }}</label>
+                <input type="text" name="day" class="form-control" > --}}
+
                 <label for="day">{{ __('day') }}</label>
-                <input type="text" name="day" class="form-control" >
+                <select name="day" class="form-control" required>
+                    <option value="">{{ __('selectDay') }}</option>
+                    <option value="lundi">{{ __('monday') }}</option>
+                    <option value="mardi">{{ __('tuesday') }}</option>
+                    <option value="mercredi">{{ __('wednesday') }}</option>
+                    <option value="jeudi">{{ __('thursday') }}</option>
+                    <option value="vendredi">{{ __('friday') }}</option>
+                    <option value="samedi">{{ __('saturday') }}</option>
+                    <option value="dimanche">{{ __('sunday') }}</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="morning-opening">{{ __('morningOpening') }}</label>
