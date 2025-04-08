@@ -32,6 +32,8 @@
     "success": "Succès",
     "warning": "Avertissement",
     "info": "Info",
+    "add": "Ajouter",
+    "update": "Mettre à jour",
 
     "yes": "Oui",
     "no": "Non",
@@ -44,6 +46,12 @@
 
     "upload": "Télécharger",
     "download": "Télécharger",
+    "picture": "Image",
+    "video": "Vidéo",
+    "audio": "Audio",
+    "file": "Fichier",
+    "files": "Fichiers",
+    "description": "Description",
 
     "view": "Voir",
     "open": "Ouvrir",
@@ -79,8 +87,26 @@
     "vin": "VIN",
     "mileage": "Kilométrage",
     "fuel type": "Carburant",
-    "price": "Prix"
+    "price": "Prix",
 
+    "day": "Jour",
+    "Add opening hours": "Ajouter des horaires",
+    "opening hours": "Horaires",
+    "morningOpening": "Ouverture matin",
+    "morningClosing": "Fermeture matin",
+    "afternoonOpening": "Ouverture après-midi",
+    "afternoonClosing": "Fermeture après-midi",
+    "monday": "Lundi",
+    "tuesday": "Mardi",
+    "wednesday": "Mercredi",
+    "thursday": "Jeudi",
+    "friday": "Vendredi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche",
+    "edit opening hours": "Modifier les heures d'ouverture",
+    "opening hours list": "Liste des horaires d'ouverture",
 
-
+    "add service": "Ajouter un service",
+    "edit service": "Modifier le service",
+    "service list": "Liste des services"
 }
