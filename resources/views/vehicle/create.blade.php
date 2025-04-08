@@ -7,6 +7,9 @@
 
 @section('content')
     <div class="vehicle-container">
+
+        <a href="{{ route('vehicles.index') }}">{{ __('back') }}</a>
+
         <h1>{{ __('add vehicle') }}</h1>
         <form action="{{ route('vehicles.store') }}" method="post">
             @csrf

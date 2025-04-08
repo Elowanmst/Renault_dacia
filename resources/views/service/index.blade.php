@@ -2,11 +2,13 @@
 
 @section('styles')
     @vite(['resources/css/admin/service.css'])
-    {{-- @vite(['resources/css/admin/dashboard.css']) --}}
+    @vite(['resources/css/admin/dashboard.css'])
 @endsection
 
 @section('content')
-    <div class="services-container">
+
+
+    <div class="main-content">
 
 
         <div class="services-list">
