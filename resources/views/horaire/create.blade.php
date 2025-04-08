@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="horaires-container">
-        <h1>{{ __('add horaire') }}</h1>
+        <h1>{{ __('Add opening hours') }}</h1>
         <form action="{{ route('horaires.store') }}" method="post">
             @csrf
             <div class="form-group">
@@ -15,28 +15,24 @@
                 <input type="text" name="day" class="form-control" >
             </div>
             <div class="form-group">
-                <label for="morning-opening">{{ __('morningO') }}</label>
+                <label for="morning-opening">{{ __('morningOpening') }}</label>
                 <input type="time" name="morningO" class="form-control" >
             </div>
             <div class="form-group">
-                <label for="morning-closing">{{ __('morningC') }}</label>
+                <label for="morning-closing">{{ __('morningClosing') }}</label>
                 <input type="time" name="morningC" class="form-control" >
             </div>
             <div class="form-group">
-                <label for="afternoon-opening">{{ __('afternoonO') }}</label>
+                <label for="afternoon-opening">{{ __('afternoonOpening') }}</label>
                 <input type="time" name="afternoonO" class="form-control" >
             </div>
             <div class="form-group">
-                <label for="afternoon-closing">{{ __('afternoonC') }}</label>
+                <label for="afternoon-closing">{{ __('afternoonClosing') }}</label>
                 <input type="time" name="afternoonC" class="form-control" >
             </div>
-            {{-- <div class="form-group">
-                <label for="picture">{{ __('picture') }}</label>
-                <input type="file" name="picture" class="form-control" >
-            </div> --}}
             
            
-            <button type="submit" class="btn btn-primary">{{ __('create') }}</button>
+            <button type="submit" class="btn btn-primary">{{ __('add') }}</button>
         </form>
     </div>
 @endsection

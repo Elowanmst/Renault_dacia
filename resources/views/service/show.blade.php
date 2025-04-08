@@ -1,16 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
     <div class="container">
         <a href="{{ route('services.index') }}">{{ __('back') }}</a>
 
-        <h1>{{ $service->model }}</h1>
-        <p>{{ __('name') }}: {{ $service->name }}</p>
-        <p>{{ __('description') }}: {{ $service->description }}</p>
+        <h1>{{ $services->model }}</h1>
+        <p>{{ __('name') }}: {{ $services->name }}</p>
+        <p>{{ __('description') }}: {{ $services->description }}</p>
 
         <div>
-            <a href="{{ route('services.edit', $service) }}">{{ __('edit') }}</a>
-            <form action="{{ route('services.destroy', $service) }}" method="POST" style="display: inline;">
+            <a href="{{ route('services.edit', $services) }}">{{ __('edit') }}</a>
+            <form action="{{ route('services.destroy', $services) }}" method="POST" style="display: inline;">
                 @csrf
                 @method('DELETE')
                 <button type="submit">{{ __('delete') }}</button>

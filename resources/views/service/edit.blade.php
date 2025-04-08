@@ -3,7 +3,7 @@
 @section('content')
 <div class="service-container">
     <h1>{{ __('edit service') }}</h1>
-    <form action="{{ route('services.update', $vehicle->id) }}" method="POST">
+    <form action="{{ route('services.update', $services->id) }}" method="POST">
         @csrf
         @method('PUT')
         
@@ -13,10 +13,10 @@
         </div>
         <div class="form-group">
             <label for="description">{{ __('description') }}</label>
-            <input type="textarea" class="form-control" id="description" name="description" value="{{ $vehicle->picture }}" required>
+            <input type="textarea" class="form-control" id="description" name="description" value="{{ $services->description }}" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">{{ __('update services') }}</button>
+        <button type="submit" class="btn btn-primary">{{ __('update') }}</button>
     </form>
 </div>
 @endsection

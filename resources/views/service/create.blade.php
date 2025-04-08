@@ -20,7 +20,7 @@
             </div> 
             
             <div class="form-group">
-                <label for="description">{{ __('description') }}</label>
+                <label for="description">{{ __('Description') }}</label>
                 <textarea name="description" class="form-control" rows="5">{{ old('description') }}</textarea>
             </div>
             <button type="submit" class="btn btn-primary">{{ __('create') }}</button>

@@ -13,20 +13,20 @@
 
         <div class="horaires-list">
             
-            <h1>{{__('horaire list')}}</h1>
+            <h1>{{__('opening hours list')}}</h1>
 
             <a class="btn" href="{{ route('horaires.create') }}">
-                {{ __('add horaire') }}
+                {{ __('Add opening hours') }}
             </a>
 
             <table class="horaires-details">
                 <thead>
                     <tr>    
                         <th>{{ __('day') }}</th>
-                        <th>{{ __('morning opening') }}</th>
-                        <th>{{ __('morning closing') }}</th>
-                        <th>{{ __('afternoon opening') }}</th>
-                        <th>{{ __('afternoon closing') }}</th>
+                        <th>{{ __('morningOpening') }}</th>
+                        <th>{{ __('morningClosing') }}</th>
+                        <th>{{ __('afternoonOpening') }}</th>
+                        <th>{{ __('afternoonClosing') }}</th>
                         <th></th>
                     </tr>
                 </thead>

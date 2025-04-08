@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="horaires-container">
-    <h1>{{ __('edit service') }}</h1>
+    <h1>{{ __('edit opening hours') }}</h1>
     <form action="{{ route('horaires.update', $horaires->id) }}" method="POST">
         @csrf
         @method('PUT')
@@ -12,25 +12,25 @@
             <input type="text" class="form-control" id="day" name="day" value="{{ $horaires->day }}" required>
         </div>
         <div class="form-group">
-            <label for="morningO">{{ __('morning opening') }}</label>
+            <label for="morningO">{{ __('morningOpening') }}</label>
             <input type="time" class="form-control" id="morningO" name="morningO" value="{{ $horaires->morningO }}" required>
         </div>
         <div class="form-group">
-            <label for="morningC">{{ __('morning closing') }}</label>
+            <label for="morningC">{{ __('morningClosing') }}</label>
             <input type="time" class="form-control" id="morningC" name="morningC" value="{{ $horaires->morningC }}" required>
         </div>
         <div class="form-group">
-            <label for="afternoonO">{{ __('afternoon opening') }}</label>
+            <label for="afternoonO">{{ __('afternoonOpening') }}</label>
             <input type="time" class="form-control" id="afternoonO" name="afternoonO" value="{{ $horaires->afternoonO }}" required>
         </div>
         <div class="form-group">
-            <label for="afternoonC">{{ __('afternoon closing') }}</label>
+            <label for="afternoonC">{{ __('afternoonClosing') }}</label>
             <input type="time" class="form-control" id="afternoonC" name="afternoonC" value="{{ $horaires->afternoonC }}" required>
         </div>
         
         
 
-        <button type="submit" class="btn btn-primary">{{ __('update horaire') }}</button>
+        <button type="submit" class="btn btn-primary">{{ __('update') }}</button>
     </form>
 </div>
 @endsection
