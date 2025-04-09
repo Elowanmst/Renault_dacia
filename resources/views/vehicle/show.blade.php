@@ -1,7 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.admin')
+
+@section('styles')
+    @vite(['resources/css/admin/vehicle.css'])
+    @vite(['resources/css/admin/dashboard.css'])
+@endsection
 
 @section('content')
-    <div class="container">
+    <div class="main-content">
         <a href="{{ route('vehicles.index') }}">{{ __('back') }}</a>
 
         <h1>{{ $vehicle->model }}</h1>

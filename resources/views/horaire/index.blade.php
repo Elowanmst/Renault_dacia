@@ -1,17 +1,14 @@
-
-
 @extends('layouts.admin')
 
 @section('styles')
     @vite(['resources/css/admin/horaire.css'])
-    {{-- @vite(['resources/css/admin/dashboard.css']) --}}
+    @vite(['resources/css/admin/dashboard.css'])
 @endsection
 
 @section('content')
-    <div class="horaires-container">
 
+    <div class="main-content">
 
-        <div class="horaires-list">
             
             <h1>{{__('opening hours list')}}</h1>
 
@@ -19,7 +16,7 @@
                 {{ __('Add opening hours') }}
             </a>
 
-            <table class="horaires-details">
+            <table class="details">
                 <thead>
                     <tr>    
                         <th>{{ __('day') }}</th>
@@ -43,15 +40,13 @@
                             <form action="{{ route('horaires.destroy', $horaires) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit">{{ __('delete') }}</button>
+                                <button class="btn-delete" type="submit">{{ __('delete') }}</button>
                             </form>
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-
-        </div>
 
         {{-- {{ $services->links() }} --}}
 

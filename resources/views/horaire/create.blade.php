@@ -2,11 +2,14 @@
 
 @section('styles')
     @vite(['resources/css/admin/horaire.css'])
-    {{-- @vite(['resources/css/admin/dashboard.css'])  --}}
+    @vite(['resources/css/admin/dashboard.css']) 
 @endsection
 
 @section('content')
-    <div class="horaires-container">
+    <div class="main-content">
+
+        <a href="{{ route('horaires.index') }}">{{ __('back') }}</a>
+
         <h1>{{ __('Add opening hours') }}</h1>
         <form action="{{ route('horaires.store') }}" method="post">
             @csrf

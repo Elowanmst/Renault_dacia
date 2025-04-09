@@ -13,7 +13,7 @@
             <form action="{{ route('users.destroy', $users) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="text-red-500 hover:underline">{{ __('delete') }}</button>
+                <button type="submit" class="btn-delete" >{{ __('delete') }}</button>
             </form>
         </div>
     </div>
