@@ -233,6 +233,55 @@ button:hover, .btn:hover {
     z-index: 1;
 }
 
+.card-vehicle{
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card-vehicle h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+    margin-top: 5px;
+}
+
+.vehicle-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.card-vehicle .description {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.vehicle-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.vehicle-details p {
+    flex: 0 0 calc(50% - 10px); /* Deux colonnes */
+    margin: 5px 0;
+}
+
 
 /* .card:hover {
     transform: translateY(-5px);
