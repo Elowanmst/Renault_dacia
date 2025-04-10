@@ -2,18 +2,24 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Vehicle extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
-        'picture',
         'brand',
         'model',
-        'fuel',
         'description',
         'year',
-        'mile',
-        'price'
+        'mileage',
+        'transmission',
+        'puissance',
+        'fuel',
+        'type',
+        'price',
+        'picture',
     ];
 }

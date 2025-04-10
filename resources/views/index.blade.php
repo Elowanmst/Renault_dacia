@@ -34,9 +34,48 @@
 
     <section id="service">
         <h2>Nos Véhicules</h2>
+        
+       
         <h3>Nos véhicules d'occasion</h3>
+        <div class="solution-cards">
+            @foreach ($vehicles->where('type', 'used') as $vehicle)
+                <div class="card-vehicle">
+                    <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
+                    <img src="{{ asset('storage/' . $vehicle->picture) }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image">
+                    <p class="description">{{ $vehicle->description }}</p>
+                    <div class="vehicle-details">
+                        <p>Année : {{ $vehicle->year }}</p>
+                        <p>Kilométrage : {{ $vehicle->mileage }} km</p>
+                        <p>Transmission : {{ $vehicle->transmission }}</p>
+                        <p>Puissance : {{ $vehicle->puissance }} CV</p>
+                        <p>Carburant : {{ $vehicle->fuel }}</p>
+                        <p>Type : {{ $vehicle->type }}</p>
+                        <p>Prix : {{ $vehicle->price }} €</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
 
         <h3>Nos véhicules neuf</h3>
+
+        <div class="solution-cards">
+            @foreach ($vehicles->where('type', 'new') as $vehicle)
+                <div class="card-vehicle">
+                    <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
+                    <img src="{{ asset('storage/' . $vehicle->picture) }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image">
+                    <p class="description">{{ $vehicle->description }}</p>
+                    <div class="vehicle-details">
+                        <p>Année : {{ $vehicle->year }}</p>
+                        <p>Kilométrage : {{ $vehicle->mileage }} km</p>
+                        <p>Transmission : {{ $vehicle->transmission }}</p>
+                        <p>Puissance : {{ $vehicle->puissance }} CV</p>
+                        <p>Carburant : {{ $vehicle->fuel }}</p>
+                        <p>Type : {{ $vehicle->type }}</p>
+                        <p>Prix : {{ $vehicle->price }} €</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
 
         <h3>Expert ZE</h3>
 
