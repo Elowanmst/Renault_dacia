@@ -13,6 +13,7 @@
         <p>{{ __('brand') }}: {{ $vehicle->brand }}</p>
         <p>{{ __('year') }}: {{ $vehicle->year }}</p>
         <p>{{ __('price') }}: {{ $vehicle->price }} €</p>
+        <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'thumb') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}">
         <p><small>{{ __('created at') }} {{ $vehicle->created_at->format('M d, Y') }}</small></p>
 
         <div>
