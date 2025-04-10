@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('styles')
-    @vite(['resources/css/admin/vehicles.css'])
     @vite(['resources/css/admin/dashboard.css']) 
 @endsection
 
@@ -28,20 +27,20 @@
                     <label for="year">{{ __('year') }}</label>
                     <input type="number" name="year" class="form-control" >
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="color">{{ __('color') }}</label>
                     <input type="text" name="color" class="form-control" >
-                </div>
+                </div> --}}
                 <div class="form-group">
                     <label for="price">{{ __('price') }}</label>
                     <input type="number" name="price" class="form-control" >
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="license_plate">{{ __('license plate') }}</label>
                     <input type="text" name="license_plate" class="form-control" >
-                </div>
+                </div> --}}
                 <div class="form-group">
-                    <label for="puissance">{{ __('puissance') }}</label>
+                    <label for="puissance">{{ __('horsepower') }}</label>
                     <input type="number" name="puissance" class="form-control" >
                 </div>
                 <div class="form-group">
@@ -54,17 +53,17 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="transmission">{{ __('transmission') }}</label>
+                    <label for="transmission">{{ __('Transmission') }}</label>
                     <select name="transmission" id="transmission" class="form-control">
-                        <option value="gasoline">{{ __('Automatique') }}</option>
-                        <option value="diesel">{{ __('Manuelle') }}</option>
+                        <option value="automatic">{{ __('Automatic') }}</option>
+                        <option value="manual">{{ __('Manual') }}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="type">{{ __('type') }}</label>
                     <select name="type" id="type" class="form-control">
-                        <option value="gasoline">{{ __('new') }}</option>
-                        <option value="diesel">{{ __('used') }}</option>
+                        <option value="new">{{ __('New') }}</option>
+                        <option value="used">{{ __('Used') }}</option>
                     </select>
                 </div>
                 <div class="form-group">

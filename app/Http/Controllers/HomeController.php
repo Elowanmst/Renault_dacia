@@ -16,6 +16,6 @@ class HomeController extends Controller
         $services = Service::all(); 
         $vehicles = Vehicle::all();
         $horaires = Horaire::all()->keyBy('day'); // Associe chaque horaire à son jour
-        return view('index', compact('horaires', 'services', 'vehicles')); // Passe les horaires à la vue
+        return view('index', compact('horaires', 'services', 'vehicles')); // Passe les infos à la vue
     }  
 }

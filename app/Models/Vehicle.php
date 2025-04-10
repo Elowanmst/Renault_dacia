@@ -21,5 +21,7 @@ class Vehicle extends Model
         'type',
         'price',
         'picture',
+        'color',
+        'license_plate',
     ];
 }
