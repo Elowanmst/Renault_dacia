@@ -37,50 +37,56 @@
         
        
         <h3>Nos véhicules d'occasion</h3>
-        <div class="solution-cards">
-            @foreach ($vehicles->where('type', 'used') as $vehicle)
-                <div class="card-vehicle">
-                    <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
-                    {{-- <img src="{{ asset('storage/' . $vehicle->picture) }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image"> --}}
-                    <p class="description">{{ $vehicle->description }}</p>
-                    <div class="vehicle-details">
-                        <p>{{__('year') }} : {{ $vehicle->year }}</p>
-                        <p>{{__('mileage') }} : {{ $vehicle->mileage }} km</p>
-                        <p>{{__('Transmission') }} : {{ $vehicle->transmission }}</p>
-                        <p>{{__('horsepower') }} : {{ $vehicle->puissance }} CV</p>
-                        <p>{{__('fuel') }} : {{ $vehicle->fuel }}</p>
-                        <p>{{__('type') }} : {{ $vehicle->type }}</p>
-                        <p>{{__('price') }} : {{ $vehicle->price }} €</p>
-                    </div>
+            <div class="carousel-container">
+                <button class="prev">❮</button>
+                <div class="carousel">
+                    @foreach ($vehicles->where('type', 'used') as $vehicle)
+                        <div class="card-vehicle">
+                            <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
+                            <img src="{{ asset('storage/' . $vehicle->picture) }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image">
+                            <p class="description">{{ $vehicle->description }}</p>
+                            <div class="vehicle-details">
+                                <p>{{ __('year') }} : {{ $vehicle->year }}</p>
+                                <p>{{ __('mileage') }} : {{ $vehicle->mileage }} km</p>
+                                <p>{{ __('Transmission') }} : {{ $vehicle->transmission }}</p>
+                                <p>{{ __('horsepower') }} : {{ $vehicle->puissance }} CV</p>
+                                <p>{{ __('fuel') }} : {{ $vehicle->fuel }}</p>
+                                <p>{{ __('price') }} : {{ $vehicle->price }} €</p>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-            @endforeach
-        </div>
+                <button class="next">❯</button>
+            </div>
 
         <h3>Nos véhicules neuf</h3>
-
-        <div class="solution-cards">
-            @foreach ($vehicles->where('type', 'new') as $vehicle)
-                <div class="card-vehicle">
-                    <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
-                    {{-- <img src="{{ asset('storage/' . $vehicle->picture) }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image"> --}}
-                    <p class="description">{{ $vehicle->description }}</p>
-                    <div class="vehicle-details">
-                        <p>{{__('year') }} : {{ $vehicle->year }}</p>
-                        <p>{{__('mileage') }} : {{ $vehicle->mileage }} km</p>
-                        <p>{{__('Transmission') }} : {{ $vehicle->transmission }}</p>
-                        <p>{{__('horsepower') }} : {{ $vehicle->puissance }} CV</p>
-                        <p>{{__('fuel') }} : {{ $vehicle->fuel }}</p>
-                        <p>{{__('type') }} : {{ $vehicle->type }}</p>
-                        <p>{{__('price') }} : {{ $vehicle->price }} €</p>
-                    </div>
+            <div class="carousel-container">
+                <button class="prev">❮</button>
+                <div class="carousel">
+                    @foreach ($vehicles->where('type', 'new') as $vehicle)
+                        <div class="card-vehicle">
+                            <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
+                            <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'large') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}">
+                            <p class="description">{{ $vehicle->description }}</p>
+                            <div class="vehicle-details">
+                                <p>{{ __('year') }} : {{ $vehicle->year }}</p>
+                                <p>{{ __('mileage') }} : {{ $vehicle->mileage }} km</p>
+                                <p>{{ __('Transmission') }} : {{ $vehicle->transmission }}</p>
+                                <p>{{ __('horsepower') }} : {{ $vehicle->puissance }} CV</p>
+                                <p>{{ __('fuel') }} : {{ $vehicle->fuel }}</p>
+                                <p>{{ __('price') }} : {{ $vehicle->price }} €</p>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-            @endforeach
-        </div>
+                <button class="next">❯</button>
+            </div>
 
         <h3>Expert ZE</h3>
 
 
 
+        
 
     </section>
 

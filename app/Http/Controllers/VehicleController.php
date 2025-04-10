@@ -46,6 +46,12 @@ class VehicleController extends Controller
             // 'color' => 'nullable|string',
         ]);
 
+        $vehicle = Vehicle::create($request->except('picture'));
+
+        if ($request->hasFile('picture')) {
+            $vehicle->addMedia($request->file('picture'))->toMediaCollection('vehicles');
+        }
+
         Vehicle::create($data);
 
         return redirect()->route('vehicles.index');

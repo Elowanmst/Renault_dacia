@@ -75,6 +75,10 @@
                     <label for="description">{{ __('description') }}</label>
                     <textarea name="description" class="form-control" rows="5"></textarea>
                 </div>
+                <div class="form-group">
+                    <label for="picture">Image</label>
+                    <input type="file" name="picture" id="picture" class="form-control" accept="image/*">
+                </div>
                 <button type="submit" class="btn btn-primary">{{ __('create') }}</button>
             </form>
         </div>
