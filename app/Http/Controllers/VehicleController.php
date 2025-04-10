@@ -43,6 +43,7 @@ class VehicleController extends Controller
             'transmission' => 'nullable|string',
             'puissance' => 'nullable|integer',
             'type' => 'nullable|in:new,used',
+            // 'color' => 'nullable|string',
         ]);
 
         Vehicle::create($data);

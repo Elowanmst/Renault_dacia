@@ -41,16 +41,16 @@
             @foreach ($vehicles->where('type', 'used') as $vehicle)
                 <div class="card-vehicle">
                     <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
-                    <img src="{{ asset('storage/' . $vehicle->picture) }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image">
+                    {{-- <img src="{{ asset('storage/' . $vehicle->picture) }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image"> --}}
                     <p class="description">{{ $vehicle->description }}</p>
                     <div class="vehicle-details">
-                        <p>Année : {{ $vehicle->year }}</p>
-                        <p>Kilométrage : {{ $vehicle->mileage }} km</p>
-                        <p>Transmission : {{ $vehicle->transmission }}</p>
-                        <p>Puissance : {{ $vehicle->puissance }} CV</p>
-                        <p>Carburant : {{ $vehicle->fuel }}</p>
-                        <p>Type : {{ $vehicle->type }}</p>
-                        <p>Prix : {{ $vehicle->price }} €</p>
+                        <p>{{__('year') }} : {{ $vehicle->year }}</p>
+                        <p>{{__('mileage') }} : {{ $vehicle->mileage }} km</p>
+                        <p>{{__('Transmission') }} : {{ $vehicle->transmission }}</p>
+                        <p>{{__('horsepower') }} : {{ $vehicle->puissance }} CV</p>
+                        <p>{{__('fuel') }} : {{ $vehicle->fuel }}</p>
+                        <p>{{__('type') }} : {{ $vehicle->type }}</p>
+                        <p>{{__('price') }} : {{ $vehicle->price }} €</p>
                     </div>
                 </div>
             @endforeach
@@ -62,16 +62,16 @@
             @foreach ($vehicles->where('type', 'new') as $vehicle)
                 <div class="card-vehicle">
                     <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
-                    <img src="{{ asset('storage/' . $vehicle->picture) }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image">
+                    {{-- <img src="{{ asset('storage/' . $vehicle->picture) }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image"> --}}
                     <p class="description">{{ $vehicle->description }}</p>
                     <div class="vehicle-details">
-                        <p>Année : {{ $vehicle->year }}</p>
-                        <p>Kilométrage : {{ $vehicle->mileage }} km</p>
-                        <p>Transmission : {{ $vehicle->transmission }}</p>
-                        <p>Puissance : {{ $vehicle->puissance }} CV</p>
-                        <p>Carburant : {{ $vehicle->fuel }}</p>
-                        <p>Type : {{ $vehicle->type }}</p>
-                        <p>Prix : {{ $vehicle->price }} €</p>
+                        <p>{{__('year') }} : {{ $vehicle->year }}</p>
+                        <p>{{__('mileage') }} : {{ $vehicle->mileage }} km</p>
+                        <p>{{__('Transmission') }} : {{ $vehicle->transmission }}</p>
+                        <p>{{__('horsepower') }} : {{ $vehicle->puissance }} CV</p>
+                        <p>{{__('fuel') }} : {{ $vehicle->fuel }}</p>
+                        <p>{{__('type') }} : {{ $vehicle->type }}</p>
+                        <p>{{__('price') }} : {{ $vehicle->price }} €</p>
                     </div>
                 </div>
             @endforeach
