@@ -172,18 +172,121 @@
     </section>
 
 
-    <section id="contact">
-        <h2>Contact</h2>
-        
+    {{-- <section id="contact">
 
-    </section>
-
+        <div class="background">
+            <div class="container">
+              <div class="screen">
+                <div class="screen-header">
+                  <div class="screen-header-left">
+                    <div class="screen-header-button close"></div>
+                    <div class="screen-header-button maximize"></div>
+                    <div class="screen-header-button minimize"></div>
+                  </div>
+                  <div class="screen-header-right">
+                    <div class="screen-header-ellipsis"></div>
+                    <div class="screen-header-ellipsis"></div>
+                    <div class="screen-header-ellipsis"></div>
+                  </div>
+                </div> 
+                <div class="screen-body">
+                  <div class="screen-body-item left">
+                    <div class="app-title">
+                      <span>CONTACTEZ-NOUS</span>
+                      <p class="telContact">Tel : +33 2 51 55 83 26<br>Adresse : 84 Bd Georges Pompidou<br>85800 Saint-Gilles-Croix-de-Vie</p>
+                    </div>
+                    <div class="app-contact">* infos requis</div>
+                  </div>
+                  <div class="screen-body-item">
+                    <div class="app-form">
+                      <div class="app-form-group">
+                        <input class="app-form-control" placeholder="NOM*">
+                      </div>
+                      <div class="app-form-group">
+                        <input class="app-form-control" placeholder="PRENOM*">
+                      </div>
+                      <div class="app-form-group">
+                        <input class="app-form-control" placeholder="ENTREPRISE">
+                      </div>
+                      <div class="app-form-group">
+                        <input class="app-form-control" placeholder="EMAIL*">
+                      </div>
+                      <div class="app-form-group message">
+                        <textarea class="app-form-control" placeholder="MESSAGE*"></textarea>
+                      </div>
+                      <div class="app-form-group buttons">
+                        <button class="app-form-button">ENVOYER</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section> --}}
+    
     <footer>
         <p>© 2025 - Garage du Centre RENAULT | DACIA  </p>
         <br>
         <p>created by ec-craft.fr  </p>
 
     </footer>
+
+    <button id="openModal" class="btn-primary">Contactez-nous</button>
+    {{-- fenetre modal --}}
+    <div id="contactModal" class="modal">
+        <div class="modal-overlay">
+            <div class="container">
+                <div class="screen">
+                    <div class="screen-header">
+                        <div class="screen-header-left">
+                            <div class="screen-header-button close"></div>
+                            <div class="screen-header-button maximize"></div>
+                            <div class="screen-header-button minimize"></div>
+                        </div>
+                        <div class="screen-header-right">
+                            <span class="close">&times;</span>
+                        </div>
+                    </div>
+                    <div class="screen-body">
+                        <div class="screen-body-item left">
+                            <div class="app-title">
+                                <span>CONTACTEZ-NOUS</span>
+                                <p class="telContact">Tel : +33 2 51 55 83 26<br>Adresse : 84 Bd Georges Pompidou<br>85800 Saint-Gilles-Croix-de-Vie</p>
+                            </div>
+                            <div class="app-contact">* infos requis</div>
+                        </div>
+                        <div class="screen-body-item">
+                                    <div class="app-form-group">
+                                        <input class="app-form-control" name="nom" placeholder="NOM*" required>
+                                    </div>
+                                    <div class="app-form-group">
+                                        <input class="app-form-control" name="prenom" placeholder="PRENOM*" required>
+                                    </div>
+                                    <div class="app-form-group">
+                                        <input class="app-form-control" name="entreprise" placeholder="ENTREPRISE">
+                                    </div>
+                                    <div class="app-form-group">
+                                        <input class="app-form-control" name="email" type="email" placeholder="EMAIL*" required>
+                                    </div>
+                                    <div class="app-form-group message">
+                                        <textarea class="app-form-control" name="message" placeholder="MESSAGE*" required></textarea>
+                                    </div>
+                                    <div class="app-form-group buttons">
+                                        <button type="submit" class="app-form-button">Envoyer</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+
 
 
 @endsection
