@@ -29,10 +29,12 @@
 
         <ul>
             <li><a href="{{ route('admin') }}">Dashboard</a></li>
-            <li><a href="{{ route('users.index') }}">Users</a></li>
-            <li><a href="{{ route('vehicles.index') }}">Véhicules</a></li>
-            <li><a href="{{ route('services.index') }}">Services</a></li>
-            <li><a href="{{ route('horaires.index') }}">Horaires</a></li>
+            <li><a href="{{ route('users.index') }}">{{ __('Users') }}</a></li>
+            <li><a href="{{ route('vehicles.index') }}">{{ __('Vehicles') }}</a></li>
+            <li><a href="{{ route('services.index') }}">{{ __('Services') }}</a></li>
+            <li><a href="{{ route('horaires.index') }}">{{ __('Opening hours') }}</a></li>
+            <li><a href="{{ route('exceptional-closures.index') }}">{{ __('Exceptional closures') }}</a></li>
+            <li><a href="{{ route('exceptional-events.index') }}">{{ __('Exceptional events') }}</a></li>
         </ul>
     
         <form method="POST" action="{{ route('logout') }}" style="margin-top: 20px;">
