@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Nous recrutons</h1>
+    <h1 class="recru">Nous recrutons</h1>
     <p>Découvrez nos offres d'emploi :</p>
 
     @if ($jobOffers->isEmpty())
@@ -30,6 +30,6 @@
         </div>
     @endif
     <a href="{{ url()->previous() }}" class="btn-back">Retour</a>
+    <button id="openModal" class="btn-primary">Contactez-nous</button>
 @endsection
 
-@vite(['resources/js/app.js', 'resources/css/app.css'])
