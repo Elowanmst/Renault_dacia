@@ -29,6 +29,7 @@
             @endforeach
         </div>
     @endif
+    <a href="{{ url()->previous() }}" class="btn-back">Retour</a>
 @endsection
 
 @vite(['resources/js/app.js', 'resources/css/app.css'])
