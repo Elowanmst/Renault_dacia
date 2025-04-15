@@ -16,6 +16,13 @@ use App\Http\Controllers\JobOfferController;
 // Auth routes
 Route::get('/admin', [DashboardController::class, 'index'])->name('admin');
 
+//recruitment routes
+Route::get('/recrutement', function () {
+    return view('recrutement');
+})->name('recrutement');
+Route::get('/recrutement', [JobOfferController::class, 'index'])->name('recrutement');
+Route::get('/recrutement', [JobOfferController::class, 'publicIndex'])->name('recrutement');
+
 // Routes pour les véhicules
 Route::resource('vehicles', VehicleController::class)->except(['show', 'index'])->middleware(['auth']);
 Route::resource('vehicles', VehicleController::class)->only(['show', 'index']);
