@@ -48,7 +48,7 @@
 
         {{-- Notre équipe --}}
         <div class="card">
-            <h2 onclick="window.location='{{ route('team.index') }}'" style="cursor: pointer;">{{ __('Our team') }}</h2>
+            <h2 onclick="window.location='{{ route('team_members.index') }}'" style="cursor: pointer;">{{ __('Our team') }}</h2>
             @foreach ($teamMembers as $teamMember)
                 <p> {{ $teamMember->name }} : {{ $teamMember->position }}</p>
             @endforeach
