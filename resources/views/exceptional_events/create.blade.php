@@ -10,10 +10,10 @@
 
         <div class="container">
 
-            <a href="{{ route('exceptional-events.index') }}">{{ __('back') }}</a>
+            <a class="back-button" href="{{ route('exceptional-events.index') }}">{{ __('back') }}</a>
 
             <h1>{{ __('Add exceptional event') }}</h1>
-            <form action="{{ route('exceptional-events.store') }}" method="post">
+            <form class="create-form" action="{{ route('exceptional-events.store') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="name">{{ __('Name') }}</label>

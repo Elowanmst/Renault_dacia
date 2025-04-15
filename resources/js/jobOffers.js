@@ -13,3 +13,6 @@ function toggleJobDetails(jobId, show) {
         hideButton.style.display = 'none'; // Cache le bouton "Fermer les détails"
     }
 }
+
+// Rendre la fonction accessible globalement
+window.toggleJobDetails = toggleJobDetails;

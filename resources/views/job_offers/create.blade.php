@@ -1,19 +1,18 @@
 @extends('layouts.admin')
 
 @section('styles')
-    @vite(['resources/css/admin/service.css'])
     @vite(['resources/css/admin/dashboard.css']) 
 @endsection
 
 @section('content')
     <div class="main-content">
 
-        <a href="{{ route('job_offers.index') }}">{{ __('back') }}</a>
-        <h1>{{ __('add a job offer') }}</h1>
-        <form action="{{ route('job_offers.store') }}" method="post">
+        <a class="back-button" href="{{ route('job_offers.index') }}">{{ __('back') }}</a>
+        <h1>{{ __('Add new job offer') }}</h1>
+        <form class="create-form" class="create-form" action="{{ route('job_offers.store') }}" method="post">
             @csrf
             <div class="form-group">
-                <label for="title">{{ __('title') }}</label>
+                <label for="title">{{ __('Title') }}</label>
                 <input type="text" name="title" class="form-control" value="{{ old('title') }}" required>
                 @error('title')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -81,7 +80,7 @@
                 @enderror
             </div>
 
-            <button type="submit" class="btn btn-primary">{{ __('create') }}</button>
+            <button type="submit" class="btn btn-primary btn-form">{{ __('create') }}</button>
         </form>
     </div>
 @endsection

@@ -94,8 +94,11 @@
     <section id="garage">
     <h2>Votre garage</h2>
 
-    <h3>Notre équipe</h3>
+    <div class="">
+        <h3>Notre équipe</h3>
 
+        
+    </div>
 
     <div class="solution-content">
             <div class="solution-text">
@@ -112,9 +115,20 @@
             </div>
         </div>
  
-               
+            
 
-        <h3>evenements à ne pas manquer</h3>
+        @if ($exceptionalEvents->isNotEmpty())
+            <h3>Événements à ne pas manquer</h3>
+            <div class="exceptionalEvents-container">
+                @foreach ($exceptionalEvents as $exceptionalEvent)
+                    <div class="exceptionalEvent-card">
+                        <h4>{{ $exceptionalEvent->name }}</h4>
+                        <p>{{ $exceptionalEvent->description }}</p>
+                        <p>{{ __('Date') }} : {{ $exceptionalEvent->start_date->format('d/m/Y') }}</p>
+                    </div>
+                @endforeach
+            </div>
+        @endif
 
     </section>
 
@@ -164,9 +178,18 @@
             </tbody>
         </table>
 
-        <h3>Fermeture exceptionelle</h3>
+        @if ($exceptionalClosures->isNotEmpty())
+            <h3>Fermeture exceptionelle</h3>
+            <div class="exceptionalClosures-container">
+                @foreach ($exceptionalClosures as $exceptionalClosure)
+                    <div class="exceptionalClosure-card">
+                        <p>Du : {{ $exceptionalClosure->start_date->format('d/m/Y') }} au {{ $exceptionalClosure->end_date->format('d/m/Y') }}</p>
+                    </div>
+                @endforeach
+            </div>
+        @endif
 
-            <!-- horaire connecté a la base de données  -->
+        
 
 
     </section>

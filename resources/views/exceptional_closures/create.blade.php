@@ -10,10 +10,10 @@
 
         <div class="container">
 
-            <a href="{{ route('exceptional-closures.index') }}">{{ __('back') }}</a>
+            <a class="back-button" href="{{ route('exceptional-closures.index') }}">{{ __('back') }}</a>
 
             <h1>{{ __('Add exceptional closure') }}</h1>
-            <form action="{{ route('exceptional-closures.store') }}" method="post">
+            <form class="create-form" action="{{ route('exceptional-closures.store') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="start_date">{{ __('Start date') }}</label>
