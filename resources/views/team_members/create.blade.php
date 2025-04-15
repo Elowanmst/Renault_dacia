@@ -12,8 +12,8 @@
 
             <a class="back-button" href="{{ route('team_members.index') }}">{{ __('back') }}</a>
 
-            <h1>{{ __('add a new team member') }}</h1>
-            <form action="{{ route('team_members.store') }}" method="post">
+            <h1>{{ __('Add new team member') }}</h1>
+            <form class="create-form" action="{{ route('team_members.store') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="name">{{ __('Name') }}</label>

@@ -13,7 +13,7 @@
         <h1>{{__('Job offers')}}</h1>
 
         <a class="btn" href="{{ route('job_offers.create') }}">
-            {{ __('add service') }}
+            {{ __('Add new job offer') }}
         </a>
 
 

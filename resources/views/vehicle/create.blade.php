@@ -13,7 +13,7 @@
             <a class="back-button" href="{{ route('vehicles.index') }}">{{ __('back') }}</a>
 
             <h1>{{ __('add vehicle') }}</h1>
-            <form action="{{ route('vehicles.store') }}" method="post">
+            <form class="create-form" action="{{ route('vehicles.store') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="brand">{{ __('brand') }}</label>
@@ -27,18 +27,10 @@
                     <label for="year">{{ __('year') }}</label>
                     <input type="number" name="year" class="form-control" >
                 </div>
-                {{-- <div class="form-group">
-                    <label for="color">{{ __('color') }}</label>
-                    <input type="text" name="color" class="form-control" >
-                </div> --}}
                 <div class="form-group">
                     <label for="price">{{ __('price') }}</label>
                     <input type="number" name="price" class="form-control" >
                 </div>
-                {{-- <div class="form-group">
-                    <label for="license_plate">{{ __('license plate') }}</label>
-                    <input type="text" name="license_plate" class="form-control" >
-                </div> --}}
                 <div class="form-group">
                     <label for="puissance">{{ __('horsepower') }}</label>
                     <input type="number" name="puissance" class="form-control" >

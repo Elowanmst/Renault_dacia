@@ -11,7 +11,7 @@
         <a class="back-button" href="{{ route('horaires.index') }}">{{ __('back') }}</a>
 
         <h1>{{ __('Add opening hours') }}</h1>
-        <form action="{{ route('horaires.store') }}" method="post">
+        <form class="create-form" action="{{ route('horaires.store') }}" method="post">
             @csrf
             <div class="form-group">
                 {{-- <label for="day">{{ __('day') }}</label>

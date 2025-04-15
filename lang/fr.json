@@ -128,7 +128,7 @@
     "service list": "Liste des services",
 
     "Exceptional closures": "Fermetures exceptionnelles",
-    "Add exceptional closure": "+ Ajouter une fermeture exceptionnelle",
+    "Add exceptional closure": "Ajouter une fermeture exceptionnelle",
     "Start date": "Date de début",
     "End date": "Date de fin",
     "Reason": "Raison",
@@ -136,10 +136,26 @@
     "Edit exceptional closure": "Modifier la fermeture exceptionnelle",
 
     "Exceptional events": "Événements exceptionnels",
-    "Add exceptional event": "+ Ajouter un événement exceptionnel",
+    "Add exceptional event": "Ajouter un événement exceptionnel",
     "Event": "Événement",
     "Update exceptional event": "Mettre à jour l'événement exceptionnel",
     "Edit exceptional event": "Modifier l'événement exceptionnel",
 
-    "Our team": "Notre équipe"
+    "Our team": "Notre équipe",
+    "Add new team member": "Ajouter un nouveau membre de l'équipe",
+    "Name": "Nom",
+    "Role": "Rôle",
+
+    "Recruitment": "Recrutement",
+    "Add new job offer": "Ajouter une nouvelle offre d'emploi",
+    "Job title": "Titre du poste",
+    "Job offers": "Offres d'emploi",
+    "Title": "Titre",
+    "Salary": "Salaire",
+    "Full Time": "Temps plein",
+    "Part Time": "Temps partiel",
+    "Internship": "Stage",
+    "Freelance": "Freelance",
+    "Requirements": "Exigences",
+    "Responsibilities": "Responsabilités"
 }
