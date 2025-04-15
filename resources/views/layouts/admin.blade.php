@@ -35,6 +35,8 @@
             <li><a href="{{ route('horaires.index') }}">{{ __('Opening hours') }}</a></li>
             <li><a href="{{ route('exceptional-closures.index') }}">{{ __('Exceptional closures') }}</a></li>
             <li><a href="{{ route('exceptional-events.index') }}">{{ __('Exceptional events') }}</a></li>
+            <li><a href="{{ route('team_members.index') }}">{{ __('Our team') }}</a></li>
+            <li><a href="{{ route('job_offers.index') }}">{{ __('Recruitment') }}</a></li>
         </ul>
     
         <form method="POST" action="{{ route('logout') }}" style="margin-top: 20px;">

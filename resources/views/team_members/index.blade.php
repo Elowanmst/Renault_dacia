@@ -9,29 +9,27 @@
     <div class="main-content">
 
 
-            <h1>{{__('Users')}}</h1>
+            <h1>{{__('Our team')}}</h1>
 
-            <a href="{{ route('users.create') }}" class="btn">{{__('create a new user')}}</a>
+            <a href="{{ route('team_members.create') }}" class="btn">{{__('Add new team member')}}</a>
 
             <table class="details">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>{{ __('username') }}</th>
-                        <th>Email</th>
-                        <th>{{ __('created at') }}</th>
+                        <th>{{ __('name') }}</th>
+                        <th>{{ __('email') }}</th>
+                        <th>{{ __('bio') }}</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($users as $user)
+                    @foreach($teamMembers as $teamMember)
                     <tr>
-                        <td>{{ $user->id }}</td>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->created_at->format('d/m/Y') }}</td>
+                        <td>{{ $teamMember->name }}</td>
+                        <td>{{ $teamMember->email }}</td>
+                        <td>{{ $teamMember->bio }}</td>
                         <td>
-                            <a href="{{ route('users.show', $user) }}">{{ __('view') }}</a>
+                            <a href="{{ route('team_members.show', $teamMember) }}">{{ __('view') }}</a>
                         </td>
                     </tr>
                     @endforeach
