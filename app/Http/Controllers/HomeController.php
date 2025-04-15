@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Vehicle;
 use App\Models\Horaire;
 use App\Models\Service;
+use App\Models\ExceptionalEvent;
+use App\Models\ExceptionalClosure;
+use App\Models\TeamMember;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,6 +19,9 @@ class HomeController extends Controller
         $services = Service::all(); 
         $vehicles = Vehicle::all();
         $horaires = Horaire::all()->keyBy('day'); // Associe chaque horaire à son jour
-        return view('index', compact('horaires', 'services', 'vehicles')); // Passe les infos à la vue
+        $exceptionalEvents = ExceptionalEvent::all(); 
+        $exceptionalClosures = ExceptionalClosure::all();
+        $teamMembers = TeamMember::all(); 
+        return view('index', compact('horaires', 'services', 'vehicles', 'exceptionalEvents', 'exceptionalClosures', 'teamMembers')); // Passe les infos à la vue
     }  
 }
