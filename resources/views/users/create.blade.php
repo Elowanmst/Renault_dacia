@@ -1,7 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.admin')
+
+@section('styles')
+    @vite(['resources/css/admin/dashboard.css'])
+@endsection
 
 @section('content')
-<div class="container">
+
+<div class="main-content">
+    
+
+    <a class="back-button" href="{{ route('users.index') }}">{{ __('back') }}</a>
     <h1>{{ __('create a new user') }}</h1>
     <form action="{{ route('users.store') }}" method="POST">
         @csrf

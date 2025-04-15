@@ -8,7 +8,7 @@
 @section('content')
     <div class="main-content">
 
-        <a href="{{ route('job_offers.index') }}">{{ __('back') }}</a>
+        <a class="back-button" href="{{ route('job_offers.index') }}">{{ __('back') }}</a>
         <h1>{{ __('add a job offer') }}</h1>
         <form action="{{ route('job_offers.store') }}" method="post">
             @csrf

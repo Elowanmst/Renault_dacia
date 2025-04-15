@@ -10,7 +10,7 @@
 
         <div class="container">
 
-            <a href="{{ route('team_members.index') }}">{{ __('back') }}</a>
+            <a class="back-button" href="{{ route('team_members.index') }}">{{ __('back') }}</a>
 
             <h1>{{ __('add a new team member') }}</h1>
             <form action="{{ route('team_members.store') }}" method="post">

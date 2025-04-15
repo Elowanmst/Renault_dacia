@@ -8,7 +8,7 @@
 @section('content')
     <div class="main-content">
 
-        <a href="{{ route('services.index') }}">{{ __('back') }}</a>
+        <a class="back-button" href="{{ route('services.index') }}">{{ __('back') }}</a>
         <h1>{{ __('add service') }}</h1>
         <form action="{{ route('services.store') }}" method="post" enctype="multipart/form-data">
             @csrf

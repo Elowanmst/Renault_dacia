@@ -137,6 +137,18 @@ td a {
     background: #218838;
 }
 
+/* Boutons */
+.back-button {
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.back-button:hover {
+    background: #0056b3;
+}
 
 
 /* 🔹 Responsive Design */
