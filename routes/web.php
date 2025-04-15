@@ -6,29 +6,43 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\HoraireController;
 use App\Http\Controllers\HomeController;
-
-Route::get('/', function () {
-    return view('index');
-})->name('index');
-
-Route::get('/admin', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('admin');
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExceptionalClosureController;
+use App\Http\Controllers\ExceptionalEventController;
+use App\Http\Controllers\TeamMemberController;
 
 
+// Auth routes
+Route::get('/admin', [DashboardController::class, 'index'])->name('admin');
+
+// Routes pour les véhicules
 Route::resource('vehicles', VehicleController::class)->except(['show', 'index'])->middleware(['auth']);
 Route::resource('vehicles', VehicleController::class)->only(['show', 'index']);
 
-// Route::get('/admin/users/index', [UserController::class, 'index'])->name('users.index');
-// Route::get('/admin/users/{id}', [UserController::class, 'show'])->name('users.show');
-
+// Routes pour les utilisateurs
 Route::resource('users', UserController::class)->middleware(['auth']);
 
-
+// Routes pour les services
 Route::resource('services', ServiceController::class)->except(['show', 'index'])->middleware(['auth']);
 Route::resource('services', ServiceController::class)->only(['show', 'index']);
 
+
+// Routes pour les horaires
 Route::resource('horaires', HoraireController::class)->except(['show', 'index'])->middleware(['auth']);
 Route::resource('horaires', HoraireController::class)->only(['show', 'index']);
 
+// Route pour la page d'accueil
 Route::get('/', [HomeController::class, 'index'])->name('index');
+
+
+// Routes pour les fermetures exceptionnelles
+Route::resource('exceptional-closures', ExceptionalClosureController::class)->except(['show'])->middleware(['auth']);
+
+// Routes pour les evénements exceptionnels
+Route::resource('exceptional-events', ExceptionalEventController::class)->except(['show'])->middleware(['auth']);
+
+// Routes pour les membres de l'équipe
+Route::resource('team_members', TeamMemberController::class)->except(['show'])->middleware(['auth']);
+
+// Routes pour les jobs
+// Route::resource('jobs', JobController::class)->except(['show'])->middleware(['auth']);

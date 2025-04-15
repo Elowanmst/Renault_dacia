@@ -56,9 +56,13 @@
     "view": "Voir",
     "open": "Ouvrir",
 
+    "Dashboard": "Tableau de bord",
+    "My vehicles": "Mes véhicules",
+    "My services": "Mes services",
     "create a new user": "Créer un nouvel utilisateur",
     "edit user": "Modifier l'utilisateur",
     "delete user": "Supprimer l'utilisateur",
+    "Users": "Utilisateurs",
     "Users list": "Liste des utilisateurs",
     "user details": "Détails de l'utilisateur",
     "user management": "Gestion des utilisateurs",
@@ -71,6 +75,7 @@
     "name": "Nom",
     "email": "E-mail",
     
+    "Vehicles": "Véhicules",
     "vehicles list": "Mes véhicules",
     "vehicle details": "Détails du véhicule",
     "vehicle management": "Gestion des véhicules",
@@ -102,7 +107,7 @@
 
     "day": "Jour",
     "Add opening hours": "+ Ajouter des horaires",
-    "opening hours": "Horaires",
+    "Opening hours": "Horaires",
     "morningOpening": "Ouverture matin",
     "morningClosing": "Fermeture matin",
     "afternoonOpening": "Ouverture après-midi",
@@ -120,5 +125,19 @@
 
     "add service": "+ Ajouter un service",
     "edit service": "Modifier le service",
-    "service list": "Liste des services"
+    "service list": "Liste des services",
+
+    "Exceptional closures": "Fermetures exceptionnelles",
+    "Add exceptional closure": "+ Ajouter une fermeture exceptionnelle",
+    "Start date": "Date de début",
+    "End date": "Date de fin",
+    "Reason": "Raison",
+    "Update exceptional closure": "Mettre à jour la fermeture exceptionnelle",
+    "Edit exceptional closure": "Modifier la fermeture exceptionnelle",
+
+    "Exceptional events": "Événements exceptionnels",
+    "Add exceptional event": "+ Ajouter un événement exceptionnel",
+    "Event": "Événement",
+    "Update exceptional event": "Mettre à jour l'événement exceptionnel",
+    "Edit exceptional event": "Modifier l'événement exceptionnel"
 }

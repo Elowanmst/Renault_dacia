@@ -10,7 +10,7 @@
     <div class="main-content">
 
             
-            <h1>{{__('opening hours list')}}</h1>
+            <h1>{{__('Opening hours')}}</h1>
 
             <a class="btn" href="{{ route('horaires.create') }}">
                 {{ __('Add opening hours') }}

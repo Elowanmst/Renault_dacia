@@ -38,9 +38,13 @@ body {
 .sidebar a:hover {
     background-color: #334155;
 }
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
 
 /* Contenu principal */
-.main-content {
+.main-content { /* commun à toutes les pages de l'admin */
     margin-left: 270px;
     padding: 30px;
     flex-grow: 1;
@@ -51,6 +55,27 @@ body {
     font-weight: bold;
     color: #333;
 }
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 100%;
+    gap: 13px;
+}
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 25%;
+    height: 50%;
+
+
+}
+
+
 td a {
     text-decoration: none;
     color: #000000;
@@ -118,6 +143,11 @@ td a {
 @media (max-width: 768px) {
     .container {
         padding: 10px;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
     }
 
     .details thead {

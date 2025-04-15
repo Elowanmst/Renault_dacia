@@ -98,6 +98,7 @@ class VehicleController extends Controller
         Vehicle::destroy($id);
         return redirect()->route('vehicles.index');
     }
+
 }
 
 

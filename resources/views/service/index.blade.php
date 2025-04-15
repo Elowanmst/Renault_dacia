@@ -10,7 +10,7 @@
 
     <div class="main-content">
 
-        <h1>{{__('service list')}}</h1>
+        <h1>{{__('Services')}}</h1>
 
         <a class="btn" href="{{ route('services.create') }}">
             {{ __('add service') }}
