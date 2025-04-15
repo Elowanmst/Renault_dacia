@@ -15,6 +15,11 @@ class JobOfferController extends Controller
         $jobOffers = JobOffer::all();
         return view('job_offers.index', compact('jobOffers'));
     }
+    public function publicIndex()
+    {
+        $jobOffers = JobOffer::all(); // Récupère toutes les offres d'emploi
+        return view('recrutement', compact('jobOffers')); // Transmet les données à la vue publique
+    }
 
     /**
      * Show the form for creating a new resource.

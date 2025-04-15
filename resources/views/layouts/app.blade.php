@@ -38,7 +38,7 @@
             @auth
                 <li><a href="#service">Nos services</a></li>
                 <li><a href="#garage">Votre garage</a></li>
-                <li><a href="#recrutement">Recrutement</a></li>
+                <li><a href="{{ route('recrutement') }}">Recrutement</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="{{ route('admin') }}">Admin</a></li>
                 <li>
@@ -52,7 +52,7 @@
                 <li><a href="{{ route('index') }}">Accueil</a></li>
                 <li><a href="#service">Nos services</a></li>
                 <li><a href="#garage">Votre garage</a></li>
-                <li><a href="#recrutement">Recrutement</a></li>
+                <li><a href="../views/recrutement.blade.php">Recrutement</a></li>
                 <li><a href="#loc">Nous trouver</a></li>
                 <li><a href="#contact">Contact</a></li>
             @endauth
