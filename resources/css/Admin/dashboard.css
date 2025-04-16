@@ -212,6 +212,13 @@ td a {
     background: #0056b3;
 }
 
+/* Stats */
+.stat{
+    font-size: 38px;
+    font-weight: bold;
+    color: #2fc11f;
+}
+
 
 /* 🔹 Responsive Design */
 @media (max-width: 768px) {

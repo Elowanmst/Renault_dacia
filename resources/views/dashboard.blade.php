@@ -11,20 +11,20 @@
 
     <h1>{{ __('Dashboard') }}</h1>
 
-    <div class="stats-container">
+    <div class="stats-container"> 
 
-        <div class="card">
+        <div class="card stat">
             <h2 onclick="window.location='{{ route('vehicles.index') }}'" style="cursor: pointer;">{{ __('My vehicles') }}</h2>
             <p>{{ $vehiclesCount }}</p>
         </div>
 
 
-        <div class="card">
+        <div class="card stat">
             <h2 onclick="window.location='{{ route('services.index') }}'" style="cursor: pointer;">{{ __('My services') }}</h2>
             <p>{{ $servicesCount }}</p>
         </div>
 
-        <div class="card">
+        <div class="card stat">
             <h2 onclick="window.location='{{ route('users.index') }}'" style="cursor: pointer;">{{ __('Users') }}</h2>
             <p>{{ $usersCount }}</p>
         </div>
@@ -50,7 +50,7 @@
         <div class="card">
             <h2 onclick="window.location='{{ route('team_members.index') }}'" style="cursor: pointer;">{{ __('Our team') }}</h2>
             @foreach ($teamMembers as $teamMember)
-                <p> {{ $teamMember->name }} : {{ $teamMember->position }}</p>
+                <p> {{ $teamMember->name }} : {{ $teamMember->role }}</p>
             @endforeach
         </div>
 
