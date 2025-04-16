@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="main-content">
-        <a href="{{ route('services.index') }}">{{ __('back') }}</a>
+        <a href="{{ url()->previous() }}">{{ __('back') }}</a>
 
         <h1>{{ $services->model }}</h1>
         <p>{{ __('name') }}: {{ $services->name }}</p>

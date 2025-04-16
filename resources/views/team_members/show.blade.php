@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="main-content">
-        <a href="{{ route('team_members.index') }}">{{ __('back') }}</a>
+        <a href="{{ url()->previous() }}">{{ __('back') }}</a>
 
         <h1>{{ $teamMember->name }}</h1>
         <p>{{ __('Email') }}: {{ $teamMember->email }}</p>

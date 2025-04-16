@@ -158,7 +158,7 @@
         
                 @foreach ($jours as $jour)
                     <tr>
-                        <td>{{ $jour }}</td>
+                        <td class="day">{{ $jour }}</td>
                         <td>
                             @if (isset($horaires[$jour]))
                                 {{ $horaires[$jour]->morningO ?? 'Fermé' }} - {{ $horaires[$jour]->morningC ?? 'Fermé' }}

@@ -8,7 +8,7 @@
 @section('content')
 <div class="main-content">
 
-    <a href="{{ route('vehicles.index') }}">{{ __('back') }}</a>
+    <a href="{{ url()->previous() }}">{{ __('back') }}</a>
 
     <h1>{{ __('edit vehicle') }}</h1>
     <form action="{{ route('vehicles.update', $vehicle->id) }}" method="POST">

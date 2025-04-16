@@ -1,8 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.admin')
+
+@section('styles')
+    @vite(['resources/css/admin/dashboard.css'])
+@endsection
 
 @section('content')
-<div class="container">
+
+<div class="main-content">
+
+    <a href="{{ url()->previous() }}" class="">{{ __('back') }}</a>
+
     <h1>{{ __('edit user') }}</h1>
+
     <form action="{{ route('users.update', $user->id) }}" method="POST">
         @csrf
         @method('PUT')
