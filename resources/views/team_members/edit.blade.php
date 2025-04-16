@@ -7,10 +7,10 @@
 @section('content')
 <div class="main-content">
 
-    <a href="{{ url()->previous() }}">{{ __('back') }}</a>
+    <a class="back-btn" href="{{ url()->previous() }}">{{ __('back') }}</a>
 
     <h1>{{ __('edit team member') }}</h1>
-    <form action="{{ route('team_members.update', $teamMember->id) }}" method="POST">
+    <form class="admin-form" action="{{ route('team_members.update', $teamMember->id) }}" method="POST">
         @csrf
         @method('PUT')
 

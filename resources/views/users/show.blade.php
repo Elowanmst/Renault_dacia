@@ -8,7 +8,7 @@
 
     <div class="main-content">
 
-        <a href="{{ url()->previous() }}" class="">{{ __('back') }}</a>
+        <a href="{{ route('users.index') }}" class="back-btn">{{ __('back') }}</a>
 
         <h1 class="">{{ $users->name }}</h1>
         <p class="">{{ $users->email }}</p>

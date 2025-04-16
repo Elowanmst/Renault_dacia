@@ -9,9 +9,9 @@
 <div class="main-content">
     
 
-    <a class="back-button" href="{{ route('users.index') }}">{{ __('back') }}</a>
+    <a class="back-btn" href="{{ route('users.index') }}">{{ __('back') }}</a>
     <h1>{{ __('create a new user') }}</h1>
-    <form class="create-form" action="{{ route('users.store') }}" method="POST">
+    <form class="admin-form" action="{{ route('users.store') }}" method="POST">
         @csrf
 
         <div class="form-group">

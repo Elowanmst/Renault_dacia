@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="main-content">
-        <a href="{{ url()->previous() }}">{{ __('back') }}</a>
+        <a class="back-btn" href="{{ url()->previous() }}">{{ __('back') }}</a>
 
         <h1>{{ $jobOffer->model }}</h1>
         <p>{{ __('Title') }}: {{ $jobOffer->title }}</p>
@@ -17,7 +17,7 @@
             <form action="{{ route('job_offers.destroy', $jobOffer) }}" method="POST" style="display: inline;">
                 @csrf
                 @method('DELETE')
-                <button type="submit">{{ __('delete') }}</button>
+                <button class="btn-delete" type="submit">{{ __('delete') }}</button>
             </form>
         </div>
     </div>

@@ -8,11 +8,11 @@
 
 <div class="main-content">
 
-    <a href="{{ url()->previous() }}" class="">{{ __('back') }}</a>
+    <a href="{{ url()->previous() }}" class="back-btn">{{ __('back') }}</a>
 
     <h1>{{ __('edit user') }}</h1>
 
-    <form action="{{ route('users.update', $user->id) }}" method="POST">
+    <form class="admin-form" action="{{ route('users.update', $user->id) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -26,7 +26,7 @@
             <input type="email" name="email" id="email" class="form-control" value="{{ $user->email }}" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">{{ __('confirm') }}</button>
+        <button type="submit" class="btn">{{ __('confirm') }}</button>
     </form>
 </div>
 @endsection

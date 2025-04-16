@@ -201,7 +201,7 @@
 
     </footer>
 
-    <button id="openModal" class="btn-primary">Contactez-nous</button>
+    <button id="openModal" >Contactez-nous</button>
     {{-- fenetre modal --}}
     <div id="contactModal" class="modal">
         <div class="modal-overlay">

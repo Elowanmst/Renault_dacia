@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="main-content">
-        <a href="{{ url()->previous() }}">{{ __('back') }}</a>
+        <a class="back-btn" href="{{ url()->previous() }}">{{ __('back') }}</a>
 
         <h1>Fermeture du </h1>
         <p>{{ __('Start date') }}: {{ $exceptionalClosure->start_date }}</p>
@@ -19,7 +19,7 @@
             <form action="{{ route('exceptional-closures.destroy', $exceptionalClosure) }}" method="POST" style="display: inline;">
                 @csrf
                 @method('DELETE')
-                <button type="submit">{{ __('delete') }}</button>
+                <button class="btn-delete" type="submit">{{ __('delete') }}</button>
             </form>
         </div>
     </div>

@@ -8,10 +8,10 @@
 @section('content')
 <div class="main-content">
 
-    <a href="{{ url()->previous() }}">{{ __('back') }}</a>
+    <a class="back-btn" href="{{ url()->previous() }}">{{ __('back') }}</a>
 
     <h1>{{ __('Edit exceptional closure') }}</h1>
-    <form action="{{ route('exceptional-closures.update', $exceptionalClosure->id) }}" method="POST">
+    <form class="admin-form" action="{{ route('exceptional-closures.update', $exceptionalClosure->id) }}" method="POST">
         @csrf
         @method('PUT')
         
