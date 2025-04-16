@@ -8,7 +8,7 @@
 @section('content')
 <div class="main-content">
 
-    <a href="{{ route('exceptional-closures.index') }}">{{ __('back') }}</a>
+    <a href="{{ url()->previous() }}">{{ __('back') }}</a>
 
     <h1>{{ __('Edit exceptional closure') }}</h1>
     <form action="{{ route('exceptional-closures.update', $exceptionalClosure->id) }}" method="POST">

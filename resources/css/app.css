@@ -400,6 +400,9 @@ button.next {
     font-weight: bold;
     color: #333333;
 }
+.day {
+    text-transform: capitalize;
+}
 
 
 /* Iframe (Google Maps) */

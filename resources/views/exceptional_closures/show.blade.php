@@ -7,7 +7,7 @@
 
 @section('content')
     <div class="main-content">
-        <a href="{{ route('exceptional-closures.index') }}">{{ __('back') }}</a>
+        <a href="{{ url()->previous() }}">{{ __('back') }}</a>
 
         <h1>Fermeture du </h1>
         <p>{{ __('Start date') }}: {{ $exceptionalClosure->start_date }}</p>

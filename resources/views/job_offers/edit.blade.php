@@ -8,7 +8,7 @@
 @section('content')
 <div class="main-content">
 
-    <a href="{{ route('job_offers.index') }}">{{ __('back') }}</a>
+    <a href="{{ url()->previous() }}">{{ __('back') }}</a>
 
     <h1>{{ __('edit service') }}</h1>
     <form action="{{ route('job_offers.update', $jobOffer->id) }}" method="POST">

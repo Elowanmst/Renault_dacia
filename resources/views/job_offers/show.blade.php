@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="main-content">
-        <a href="{{ route('job_offers.index') }}">{{ __('back') }}</a>
+        <a href="{{ url()->previous() }}">{{ __('back') }}</a>
 
         <h1>{{ $jobOffer->model }}</h1>
         <p>{{ __('Title') }}: {{ $jobOffer->title }}</p>

@@ -7,7 +7,7 @@
 @section('content')
 <div class="main-content">
 
-    <a href="{{ route('team_members.index') }}">{{ __('back') }}</a>
+    <a href="{{ url()->previous() }}">{{ __('back') }}</a>
 
     <h1>{{ __('edit team member') }}</h1>
     <form action="{{ route('team_members.update', $teamMember->id) }}" method="POST">
