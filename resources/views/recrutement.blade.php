@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Nous recrutons</h1>
-    <p>Découvrez nos offres d'emploi :</p>
+    <h1 class="titleRecru">Nous recrutons</h1>
+    <p class="pRecru">Découvrez nos offres d'emploi :</p>
 
     @if ($jobOffers->isEmpty())
         <p>Aucune offre d'emploi disponible pour le moment.</p>
@@ -32,4 +32,3 @@
     <a href="{{ url()->previous() }}" class="btn-back">Retour</a>
 @endsection
 
-@vite(['resources/js/app.js', 'resources/css/app.css'])

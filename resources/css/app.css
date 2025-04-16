@@ -755,6 +755,15 @@ footer a:hover {
   height: 700px;
   
 }
+.titleRecru{
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+    margin-top: 150px;
+    text-align: center;
+}
+.pRecru{
+  margin-bottom: 50px;
+}
 
 /* Style des cartes */
 .job-card {
