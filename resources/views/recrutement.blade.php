@@ -30,5 +30,6 @@
         </div>
     @endif
     <a href="{{ url()->previous() }}" class="btn-back">Retour</a>
+    <button id="openModal" class="btn-primary">Contactez-nous</button>
 @endsection
 
