@@ -14,7 +14,7 @@ use App\Http\Controllers\JobOfferController;
 
 
 // Auth routes
-Route::get('/admin', [DashboardController::class, 'index'])->name('admin');
+Route::get('/admin', [DashboardController::class, 'index'])->name('admin')->middleware(['auth']);
 
 //recruitment routes
 // Route::get('/recrutement', function () {
@@ -53,4 +53,4 @@ Route::resource('exceptional-events', ExceptionalEventController::class)->except
 Route::resource('team_members', TeamMemberController::class)->middleware(['auth']);
 
 // Routes pour les jobs
-// Route::resource('job_offers', JobOfferController::class)->middleware(['auth']);
+Route::resource('job_offers', JobOfferController::class)->middleware(['auth']);

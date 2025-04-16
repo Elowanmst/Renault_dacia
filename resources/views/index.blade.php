@@ -43,7 +43,7 @@
                     @foreach ($vehicles->where('type', 'used') as $vehicle)
                         <div class="card-vehicle">
                             <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
-                            <img src="{{ asset('storage/' . $vehicle->picture) }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image">
+                            {{-- <img src="{{ asset('storage/' . $vehicle->picture) }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image"> --}}
                             <p class="description">{{ $vehicle->description }}</p>
                             <div class="vehicle-details">
                                 <p>{{ __('year') }} : {{ $vehicle->year }}</p>
@@ -66,7 +66,7 @@
                     @foreach ($vehicles->where('type', 'new') as $vehicle)
                         <div class="card-vehicle">
                             <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
-                            <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'large') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}">
+                            {{-- <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'large') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}"> --}}
                             <p class="description">{{ $vehicle->description }}</p>
                             <div class="vehicle-details">
                                 <p>{{ __('year') }} : {{ $vehicle->year }}</p>
@@ -124,7 +124,7 @@
                     <div class="exceptionalEvent-card">
                         <h4>{{ $exceptionalEvent->name }}</h4>
                         <p>{{ $exceptionalEvent->description }}</p>
-                        <p>{{ __('Date') }} : {{ $exceptionalEvent->start_date->format('d/m/Y') }}</p>
+                        <p>{{ __('Date') }} : du {{ $exceptionalEvent->start_date->format('d/m/Y') }} au {{ $exceptionalEvent->end_date->format('d/m/Y') }}</p>
                     </div>
                 @endforeach
             </div>
@@ -193,60 +193,6 @@
 
 
     </section>
-
-
-    {{-- <section id="contact">
-
-        <div class="background">
-            <div class="container">
-              <div class="screen">
-                <div class="screen-header">
-                  <div class="screen-header-left">
-                    <div class="screen-header-button close"></div>
-                    <div class="screen-header-button maximize"></div>
-                    <div class="screen-header-button minimize"></div>
-                  </div>
-                  <div class="screen-header-right">
-                    <div class="screen-header-ellipsis"></div>
-                    <div class="screen-header-ellipsis"></div>
-                    <div class="screen-header-ellipsis"></div>
-                  </div>
-                </div> 
-                <div class="screen-body">
-                  <div class="screen-body-item left">
-                    <div class="app-title">
-                      <span>CONTACTEZ-NOUS</span>
-                      <p class="telContact">Tel : +33 2 51 55 83 26<br>Adresse : 84 Bd Georges Pompidou<br>85800 Saint-Gilles-Croix-de-Vie</p>
-                    </div>
-                    <div class="app-contact">* infos requis</div>
-                  </div>
-                  <div class="screen-body-item">
-                    <div class="app-form">
-                      <div class="app-form-group">
-                        <input class="app-form-control" placeholder="NOM*">
-                      </div>
-                      <div class="app-form-group">
-                        <input class="app-form-control" placeholder="PRENOM*">
-                      </div>
-                      <div class="app-form-group">
-                        <input class="app-form-control" placeholder="ENTREPRISE">
-                      </div>
-                      <div class="app-form-group">
-                        <input class="app-form-control" placeholder="EMAIL*">
-                      </div>
-                      <div class="app-form-group message">
-                        <textarea class="app-form-control" placeholder="MESSAGE*"></textarea>
-                      </div>
-                      <div class="app-form-group buttons">
-                        <button class="app-form-button">ENVOYER</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-    </section> --}}
     
     <footer>
         <p>© 2025 - Garage du Centre RENAULT | DACIA  </p>

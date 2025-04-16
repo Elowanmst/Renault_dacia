@@ -52,8 +52,6 @@ class VehicleController extends Controller
             $vehicle->addMedia($request->file('picture'))->toMediaCollection('vehicles');
         }
 
-        Vehicle::create($data);
-
         return redirect()->route('vehicles.index');
     }
 
