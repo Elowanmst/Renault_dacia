@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\JobOffer;
 use Illuminate\Http\Request;
+use Parsedown;
 
 class JobOfferController extends Controller
 {
@@ -18,6 +19,14 @@ class JobOfferController extends Controller
     public function publicIndex()
     {
         $jobOffers = JobOffer::all(); // Récupère toutes les offres d'emploi
+        $parsedown = new Parsedown();
+
+        foreach ($jobOffers as $jobOffer) {
+            $jobOffer->requirements = $parsedown->text($jobOffer->requirements);
+            $jobOffer->responsibilities = $parsedown->text($jobOffer->responsibilities);
+            $jobOffer->description = $parsedown->text($jobOffer->description);
+        }
+
         return view('recrutement', compact('jobOffers')); // Transmet les données à la vue publique
     }
 

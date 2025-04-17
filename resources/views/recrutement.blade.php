@@ -24,10 +24,20 @@
                         </div>
 
                         <div class="job-card-details" id="job-details-{{ $jobOffer->id }}" style="display: none;">
+                            <p><strong>Description :</strong></p>
+                            <div>{!! $jobOffer->description !!}</div>
+
                             <p><strong>Type de contrat :</strong> {{ $jobOffer->type }}</p>
                             <p><strong>Lieu :</strong> {{ $jobOffer->location }}</p>
-                            <p><strong>Pré-requis :</strong> {{ $jobOffer->requirements }}</p>
-                            <p><strong>Responsabilités :</strong> {{ $jobOffer->responsibilities }}</p>
+                            {{-- <p><strong>Pré-requis :</strong> {{ $jobOffer->requirements }}</p> --}}
+
+                            <p><strong>Pré-requis :</strong></p>
+                            <div>{!! $jobOffer->requirements !!}</div>
+
+                            {{-- <p><strong>Responsabilités :</strong> {{ $jobOffer->responsibilities }}</p> --}}
+                            <p><strong>Responsabilités :</strong></p>
+                            <div>{!! $jobOffer->responsibilities !!}</div>
+
                             <p><strong>Rémunération :</strong> {{ $jobOffer->salary_description }} €</p>
                             
                         </div>
