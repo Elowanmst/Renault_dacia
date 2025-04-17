@@ -38,7 +38,7 @@ class JobOfferController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'location' => 'string|max:255|nullable',
-            'salary_description' => 'numeric|nullable',
+            'salary_description' => 'string|nullable',
             'status' => 'string|max:255|nullable',
             'type' => 'string|max:255|nullable',
             'requirements' => 'string|nullable',
