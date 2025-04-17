@@ -43,7 +43,7 @@
                     @foreach ($vehicles->where('type', 'used') as $vehicle)
                         <div class="card-vehicle">
                             <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
-                            {{-- <img src="{{ asset('storage/' . $vehicle->picture) }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image"> --}}
+                            <img src="{{ asset('storage/' . $vehicle->picture) }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image">
                             <p class="description">{{ $vehicle->description }}</p>
                             <div class="vehicle-details">
                                 <p>{{ __('year') }} : {{ $vehicle->year }}</p>
@@ -66,7 +66,7 @@
                     @foreach ($vehicles->where('type', 'new') as $vehicle)
                         <div class="card-vehicle">
                             <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
-                            {{-- <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'large') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}"> --}}
+                            <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'large') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}">
                             <p class="description">{{ $vehicle->description }}</p>
                             <div class="vehicle-details">
                                 <p>{{ __('year') }} : {{ $vehicle->year }}</p>
@@ -83,6 +83,12 @@
             </div>
 
         <h3>Expert ZE</h3>
+        @foreach ($vehicles as $vehicule)
+            <h2>{{ $vehicule->brand }}</h2>
+            @foreach ($vehicule->getMedia('images') as $media)
+                <img src="{{ $media->getUrl() }}" alt="Image véhicule" width="200">
+            @endforeach
+        @endforeach
 
 
 

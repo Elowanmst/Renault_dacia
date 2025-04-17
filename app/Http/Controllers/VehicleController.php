@@ -34,7 +34,7 @@ class VehicleController extends Controller
             'description' => 'nullable',
             'price' => 'nullable|numeric',
             'stock' => 'nullable',
-            'picture' => 'nullable|string',
+            'picture' => 'nullable|file',
             'brand' => 'nullable|string',
             'model' => 'nullable|string',
             'fuel' => 'nullable|string',
@@ -46,10 +46,13 @@ class VehicleController extends Controller
             // 'color' => 'nullable|string',
         ]);
 
+        $vehicle = Vehicle::find(6); // Remplacez 1 par l'ID d'un véhicule existant
+        dd($vehicle->getFirstMediaUrl('vehicles', 'large'));
+
         $vehicle = Vehicle::create($request->except('picture'));
 
         if ($request->hasFile('picture')) {
-            $vehicle->addMedia($request->file('picture'))->toMediaCollection('vehicles');
+            $vehicle->addMediaFromRequest('picture')->toMediaCollection('vehicles');
         }
 
         return redirect()->route('vehicles.index');
