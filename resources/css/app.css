@@ -801,10 +801,7 @@ footer a:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-  flex: 0 1 calc(33.333% - 20px);
-  max-width: calc(33.333% - 20px);
   box-sizing: border-box;
-  height: 300px;
 }
 
 /* En-tête de la carte */
