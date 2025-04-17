@@ -132,16 +132,12 @@
 
     </section>
 
-
-    <section id="recrutement">
-        <h2>Recrutement</h2>
-
-    </section>
-
     <section id="loc">
-        <h2>Nous trouver</h2>
-        <h3>84 Boulevard Georges Pompidou - 85800 Saint Gilles Croix de Vie</h3>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2736.1941415317524!2d-1.9522203236170579!3d46.7019038711212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4804f88345397091%3A0x17682f4bf879b4b5!2sGarage%20Du%20Centre!5e0!3m2!1sfr!2sfr!4v1742403150729!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="container-loc">
+            <h2>Nous trouver</h2>
+            <h3>84 Boulevard Georges Pompidou - 85800 Saint Gilles Croix de Vie</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2736.1941415317524!2d-1.9522203236170579!3d46.7019038711212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4804f88345397091%3A0x17682f4bf879b4b5!2sGarage%20Du%20Centre!5e0!3m2!1sfr!2sfr!4v1742403150729!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
         <h3>Horaires d'ouverture</h3>
         <table class="table-horaires">
             <thead>
