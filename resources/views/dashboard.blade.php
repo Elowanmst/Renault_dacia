@@ -29,7 +29,6 @@
             <p>{{ $usersCount }}</p>
         </div>
 
-        {{-- Fermeture exceptionelle --}}
         <div class="card">
             <h2 onclick="window.location='{{ route('exceptional-closures.index') }}'" style="cursor: pointer;">{{ __('Exceptional closures') }}</h2>
             @foreach ($exceptionalClosures as $exceptionalClosure)
@@ -37,8 +36,6 @@
             @endforeach
         </div>
 
-
-        {{-- evenements --}}
         <div class="card">
             <h2 onclick="window.location='{{ route('exceptional-events.index') }}'" style="cursor: pointer;">{{ __('Exceptional events') }}</h2>
             @foreach ($exceptionalEvents as $exceptionalEvent)
@@ -46,7 +43,6 @@
             @endforeach
         </div>
 
-        {{-- Notre équipe --}}
         <div class="card">
             <h2 onclick="window.location='{{ route('team_members.index') }}'" style="cursor: pointer;">{{ __('Our team') }}</h2>
             @foreach ($teamMembers as $teamMember)
@@ -55,6 +51,12 @@
         </div>
 
         {{-- recrutement --}}
+        <div class="card">
+            <h2 onclick="window.location='{{ route('recrutement') }}'" style="cursor: pointer;">{{ __('Recrutement') }}</h2>
+            @foreach ($jobOffers as $jobOffer)
+                <p> {{ $jobOffer->title }} : {{ $jobOffer->status }}</p>
+            @endforeach
+        </div>
     </div>
 
 </div>

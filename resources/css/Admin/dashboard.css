@@ -44,10 +44,13 @@ body {
 }
 
 /* Contenu principal */
-.main-content { /* commun à toutes les pages de l'admin */
+.main-content {
     margin-left: 270px;
     padding: 30px;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .main-content h2 {
@@ -89,38 +92,31 @@ td a {
     border-collapse: collapse;
     margin-top: 20px;
 }
-
 .details th, .details td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
-
 .details th {
     background: #000000;
     color: white;
     text-transform: uppercase;
 }
-
 .details tr:hover {
     background-color: #f9f9f9;
 }
-
 .details td a {
     text-decoration: none;
     color: #000000;
     margin-right: 10px;
     font-weight: bold;
 }
-
 .details td a:hover {
     text-decoration: underline;
 }
-
 .details td form {
     display: inline;
 }
-
 
 .container a[href*="vehicles.create"] {
     display: inline-block;
@@ -132,22 +128,21 @@ td a {
     font-weight: bold;
     margin-bottom: 15px;
 }
-
 .container a[href*="vehicles.create"]:hover {
     background: #218838;
 }
 
 /* Formulaires de creation */
-.create-form {
+.admin-form {
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    min-width: 75%;
     margin: 20px auto;
 }
 
-.create-form h1 {
+.admin-form h1 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -199,19 +194,6 @@ td a {
     background-color: #2563eb;
 }
 
-/* Boutons */
-.back-button {
-    background: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-.back-button:hover {
-    background: #0056b3;
-}
-
 /* Stats */
 .stat{
     font-size: 38px;
@@ -220,10 +202,88 @@ td a {
 }
 
 
-/* 🔹 Responsive Design */
+
+
+/* Boutons */
+.back-btn {
+    background-color: #404040; 
+    color: #ffffff; 
+    border: none;
+    border-radius: 4px; 
+    padding: 15px 20px; 
+    font-size: 13px; 
+    cursor: pointer; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.2s ease-in-out; 
+}
+.back-btn:hover {
+  transform: scale(1.1); 
+  background-color: #000000; 
+  color: #ffcc00;
+}
+.btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+}
+.btn:hover {
+    background: #0056b3;
+}
+
+.btn-danger{
+    background-color: #ffcc00;
+    color: rgb(0, 0, 0);
+}
+
+.btn-success {
+    background-color: #10b981;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #059669;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-delete:hover {
+    background: #c82333;
+}
+
+/* Responsive */
+
+
+@media (max-width: 600px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+
 @media (max-width: 768px) {
-    .container {
-        padding: 10px;
+    .sidebar {
+        width: 200px;
+    }
+    
+    .main-content {
+        margin-left: 220px;
+        padding: 20px;
     }
 
     .card {
@@ -267,76 +327,5 @@ td a {
 
     .details td a, .details td button {
         font-size: 14px;
-    }
-}
-
-/* Boutons */
-.btn {
-    display: inline-block;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 14px;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-}
-
-.btn-danger{
-    background-color: #ffcc00;
-    color: rgb(0, 0, 0);
-}
-
-.btn-primary {
-    background-color: #3b82f6;
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #2563eb;
-}
-
-.btn-success {
-    background-color: #10b981;
-    color: white;
-}
-
-.btn-success:hover {
-    background-color: #059669;
-}
-
-.btn-delete {
-    background: #dc3545;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-.btn-delete:hover {
-    background: #c82333;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 200px;
-    }
-    
-    .main-content {
-        margin-left: 220px;
-        padding: 20px;
-    }
-}
-
-@media (max-width: 600px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-
-    .main-content {
-        margin-left: 0;
     }
 }

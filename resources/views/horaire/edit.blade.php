@@ -8,10 +8,10 @@
 @section('content')
 <div class="main-content">
 
-    <a href="{{ url()->previous() }}">{{ __('back') }}</a>
+    <a class="back-btn" href="{{ url()->previous() }}">{{ __('back') }}</a>
 
     <h1>{{ __('edit opening hours') }}</h1>
-    <form action="{{ route('horaires.update', $horaires->id) }}" method="POST">
+    <form class="admin-form" action="{{ route('horaires.update', $horaires->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="form-group">

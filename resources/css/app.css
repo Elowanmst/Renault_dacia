@@ -458,7 +458,6 @@ button.next {
     text-align: left;
     margin-top: 40px;
   }
-  /**/
   
   .screen:after {
     content: '';
@@ -748,7 +747,15 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Conteneur principal */
+/* job offers */
+.offers-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  margin-top: 50px;
+}
+
 .job-offers {
   display: flex;
   flex-direction: column;

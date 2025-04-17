@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('styles')
-    @vite(['resources/css/admin/horaire.css'])
     @vite(['resources/css/admin/dashboard.css'])
 @endsection
 
@@ -29,7 +28,7 @@
                 </thead>
                 <tbody>
                     @foreach($horaires as $horaires)
-                    <tr onclick="window.location='{{ route('horaires.show', $horaires) }}'" style="cursor: pointer;">
+                    <tr>
                         <td>{{ $horaires->day }}</td>
                         <td>{{ $horaires->morningO }}</td>
                         <td>{{ $horaires->morningC }}</td>
@@ -47,8 +46,6 @@
                     @endforeach
                 </tbody>
             </table>
-
-        {{-- {{ $services->links() }} --}}
 
     </div>
 

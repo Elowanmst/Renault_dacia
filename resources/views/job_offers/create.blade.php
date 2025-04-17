@@ -7,9 +7,9 @@
 @section('content')
     <div class="main-content">
 
-        <a class="back-button" href="{{ route('job_offers.index') }}">{{ __('back') }}</a>
+        <a class="back-btn" href="{{ route('job_offers.index') }}">{{ __('back') }}</a>
         <h1>{{ __('Add new job offer') }}</h1>
-        <form class="create-form" class="create-form" action="{{ route('job_offers.store') }}" method="post">
+        <form class="admin-form" class="admin-form" action="{{ route('job_offers.store') }}" method="post">
             @csrf
             <div class="form-group">
                 <label for="title">{{ __('Title') }}</label>

@@ -8,7 +8,7 @@
 
     <div class="main-content">
 
-        <a href="{{ url()->previous() }}">{{ __('back') }}</a>
+        <a class="back-btn" href="{{ url()->previous() }}">{{ __('back') }}</a>
 
         <h1>{{ $vehicle->model }}</h1>
         <p>{{ __('brand') }}: {{ $vehicle->brand }}</p>
@@ -22,7 +22,7 @@
             <form action="{{ route('vehicles.destroy', $vehicle) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button type="submit">{{ __('delete') }}</button>
+                <button class="btn-delete" type="submit">{{ __('delete') }}</button>
             </form>
         </div>
     </div>
