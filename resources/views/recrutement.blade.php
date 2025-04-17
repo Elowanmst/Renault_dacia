@@ -41,6 +41,13 @@
     <a href="{{ url()->previous() }}" class="btn-back">Retour</a>
 
     <button id="openModal" class="btn-primary">Contactez-nous</button>
+
+    <footer>
+        <p>© 2025 - Garage du Centre RENAULT | DACIA  </p>
+        <br>
+        <p>created by ec-craft.fr  </p>
+
+    </footer>
     
 @endsection
 
