@@ -28,7 +28,7 @@
                             <p><strong>Lieu :</strong> {{ $jobOffer->location }}</p>
                             <p><strong>Pré-requis :</strong> {{ $jobOffer->requirements }}</p>
                             <p><strong>Responsabilités :</strong> {{ $jobOffer->responsibilities }}</p>
-                            <p><strong>Rémunération :</strong> {{ $jobOffer->salary }} €</p>
+                            <p><strong>Rémunération :</strong> {{ $jobOffer->salary_description }} €</p>
                             
                         </div>
 

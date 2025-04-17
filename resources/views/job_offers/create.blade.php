@@ -36,9 +36,9 @@
             </div>
 
             <div class="form-group">
-                <label for="salary">{{ __('Salary') }}</label>
-                <input type="text" name="salary" class="form-control" value="{{ old('salary') }}">
-                @error('salary')
+                <label for="salary_description">{{ __('Salary') }}</label>
+                <input type="text" name="salary_description" class="form-control" value="{{ old('salary_description') }}">
+                @error('salary_description')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
