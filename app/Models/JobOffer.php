@@ -10,7 +10,7 @@ class JobOffer extends Model
         'title',
         'description', 
         'location', 
-        'salary', // e.g., 50000
+        'salary_description', // e.g., 50000
         'status', // e.g., open, closed
         'type', // e.g., full-time, part-time, contract
         'requirements', // e.g., education, experience
