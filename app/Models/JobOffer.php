@@ -8,13 +8,13 @@ class JobOffer extends Model
 {
     protected $fillable = [
         'title',
-        'description',
-        'location',
-        'salary',
-        'status',
-        'type',
-        'requirements',
-        'responsibilities',
+        'description', 
+        'location', 
+        'salary', // e.g., 50000
+        'status', // e.g., open, closed
+        'type', // e.g., full-time, part-time, contract
+        'requirements', // e.g., education, experience
+        'responsibilities', // e.g., tasks and duties
         'posted_at',
         'expires_at',
     ];
