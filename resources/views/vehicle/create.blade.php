@@ -13,7 +13,7 @@
     <a class="back-btn" href="{{ route('vehicles.index') }}">{{ __('back') }}</a>
     
     <h1>{{ __('add vehicle') }}</h1>
-    <form class="admin-form" action="{{ route('vehicles.store') }}" method="post">
+    <form class="admin-form" action="{{ route('vehicles.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="brand">{{ __('brand') }}</label>
