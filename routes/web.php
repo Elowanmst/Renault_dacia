@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\HoraireController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExceptionalClosureController;
 use App\Http\Controllers\ExceptionalEventController;
@@ -55,5 +56,9 @@ Route::resource('team_members', TeamMemberController::class)->middleware(['auth'
 // Routes pour les jobs
 Route::resource('job_offers', JobOfferController::class)->middleware(['auth']);
 
-//route temporaire
+//
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::get('/homepage/background/edit', [HomepageController::class, 'editBackground'])->name('admin.homepage.edit');
+    Route::post('/homepage/background/update', [HomepageController::class, 'updateBackground'])->name('admin.homepage.updateBackground');
+});
 

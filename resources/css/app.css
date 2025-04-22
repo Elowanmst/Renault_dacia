@@ -32,12 +32,11 @@ h2, h3 {
 }
 
 /*header style*/
-
 .hero{
     color: rgb(255, 255, 255);
     padding: 300px 0 300px 0;
     text-align: center;
-    background-image: url('/public/img/devanture-color.jpg');
+    /* background-image: url('/public/img/devanture-color.jpg'); */
     background-size: 100% 100%; 
 }
 .petit-carre{
@@ -65,18 +64,16 @@ p.textsous{
     margin-top: 10px;
     font-weight: bold;
 }
-
 .logo {
-    width: 400px; /* Ajustez la taille des logos selon vos besoins */
+    width: 400px;
     height: auto;
     object-fit: contain;  
 }
 
 
 
+
 /*nav bar*/
- 
-  
   nav {
     box-sizing: border-box;
     position: fixed;

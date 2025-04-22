@@ -43,7 +43,7 @@
             @endforeach
         </div>
 
-        <div class="card">
+        {{-- <div class="card">
             <h2 onclick="window.location='{{ route('team_members.index') }}'" style="cursor: pointer;">{{ __('Our team') }}</h2>
             @foreach ($teamMembers as $teamMember)
                 <p> {{ $teamMember->name }} : {{ $teamMember->role }}</p>
@@ -51,12 +51,37 @@
         </div>
 
         {{-- recrutement --}}
-        <div class="card">
+        {{-- <div class="card">
             <h2 onclick="window.location='{{ route('recrutement') }}'" style="cursor: pointer;">{{ __('Recrutement') }}</h2>
             @foreach ($jobOffers as $jobOffer)
                 <p> {{ $jobOffer->title }} : {{ $jobOffer->status }}</p>
             @endforeach
+        </div> --}}
+
+        <div class="card">
+            <h2 onclick="window.location='{{ route('index') }}'" style="cursor: pointer;">{{ __('Homepage') }}</h2>
+            <p>Modifiez l'arrière plan de la page d'accueil</p>
+
+            <form class="home-bg-form" action="{{ route('admin.homepage.updateBackground') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group">
+                    <input 
+                        type="file" 
+                        name="background" 
+                        id="background" 
+                        accept="image/jpeg, image/png, image/jpg, image/gif, image/svg+xml" 
+                        title="Veuillez importer une image au format JPEG, PNG, JPG, GIF ou SVG, et de taille maximale 5 Mo." 
+                        class="form-control"
+                        required
+>
+                    <small class="form-text text-muted">
+                        Formats acceptés : JPEG, PNG, JPG, GIF, SVG. Taille maximale : 5 Mo.
+                    </small>
+                </div>
+                <button class="btn btn-primary" type="submit">{{ __('Update background') }}</button>
+            </form>
         </div>
+        
     </div>
 
 </div>
