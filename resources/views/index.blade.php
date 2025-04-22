@@ -4,18 +4,16 @@
 
 
 
-{{-- <div id="navbar-container"></div>
-    <script>
-        fetch("navbar.php")
-            .then(response => response.text())
-            .then(data => document.getElementById("navbar-container").innerHTML = data);
-    </script> --}}
+    @php
+        $homepage = \App\Models\Homepage::first();
+        $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background') ? $homepage->getFirstMediaUrl('background') : asset('/img/devanture-color.jpg');
+    @endphp
 
     <header>
-        <div class="hero">
+        <div class="hero" style="background-image: url('{{ $backgroundUrl }}');">
             <div class="petit-carre">
                 <h1 class="titre">
-                    <img src="img/renault-dacia.png" alt="Dacia Logo" class="logo">
+                    <img src="{{ asset('img/renault-dacia.png') }}" alt="Dacia Logo" class="logo">
                 </h1>
                 <p class="textsous">📍 Saint Gilles Croix de Vie</p>
             </div>

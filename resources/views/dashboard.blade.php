@@ -57,6 +57,15 @@
                 <p> {{ $jobOffer->title }} : {{ $jobOffer->status }}</p>
             @endforeach
         </div>
+
+        <div class="card">
+            <form action="{{ route('admin.homepage.updateBackground') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="background" accept="image/*">
+                <button type="submit">Mettre à jour l’arrière-plan</button>
+            </form>
+        </div>
+        
     </div>
 
 </div>

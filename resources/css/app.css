@@ -37,7 +37,7 @@ h2, h3 {
     color: rgb(255, 255, 255);
     padding: 300px 0 300px 0;
     text-align: center;
-    background-image: url('/public/img/devanture-color.jpg');
+    /* background-image: url('/public/img/devanture-color.jpg'); */
     background-size: 100% 100%; 
 }
 .petit-carre{
