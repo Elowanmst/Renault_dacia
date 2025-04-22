@@ -107,7 +107,7 @@
 
             <div class="solution-cards">
                 @foreach ($services as $services)
-                    <div class="card" style="background-image: url('{{ asset('storage/' . $services->picture) }}'); background-size: cover; background-position: center;">
+                <div class="card" style="background-image: url('{{ $services->getFirstMediaUrl('services', 'grayscale-large') }}'); background-size: cover; background-position: center;">
                         <h4>{{ $services->name }}</h4>
                         {!! \Parsedown::instance()->text($services->description) !!}
                     </div>

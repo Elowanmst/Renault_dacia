@@ -20,6 +20,10 @@
             <input type="text" class="form-control" id="name" name="name" value="{{ $services->name }}" required>
         </div>
         <div class="form-group">
+            <label for="picture">{{ __('picture') }}</label>
+            <input type="file" class="form-control" id="picture" name="picture" value="{{ $services->picture }}" required>
+        </div>
+        <div class="form-group">
             <label for="description">{{ __('description') }}</label>
             <input type="textarea" class="form-control" id="description" name="description" value="{{ $services->description }}" required>
         </div>

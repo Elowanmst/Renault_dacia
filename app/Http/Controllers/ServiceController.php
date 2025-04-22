@@ -38,11 +38,11 @@ class ServiceController extends Controller
             'description' => 'nullable|string',
         ]);
 
-        if ($request->hasFile('picture')) {
-            $data['picture'] = $request->file('picture')->store('services', 'public'); // Stockage dans "storage/app/public/services"
-        }
+        $service = Service::create($data);
 
-        Service::create($data);
+        if ($request->hasFile('picture')) {
+            $service->addMedia($request->file('picture'))->toMediaCollection('services'); // Stockage dans "storage/app/public/services"
+        }
 
         return redirect()->route('services.index');
     }

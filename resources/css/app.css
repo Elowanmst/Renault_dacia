@@ -221,7 +221,7 @@ button:hover, .btn:hover {
 
 .card {
     width: 300px;
-    height: auto;
+    height: 300px;
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -347,14 +347,15 @@ button.next {
 } */
 
 .card h4 {
-    color: #000000;
+    color: #ffffff;
     margin-bottom: 10px;
     position: relative;
     z-index: 2;
+    font-size: 23px;
 }
 
 .card p {
-    color: #1c1b1b;
+    color: #ffffff;
     position: relative;
     z-index: 2;
 }
