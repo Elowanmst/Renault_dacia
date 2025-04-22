@@ -29,19 +29,28 @@ class Vehicle extends Model implements HasMedia
         'license_plate',
     ];
 
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('vehicles')->singleFile();
+    }
+
+    
     public function registerMediaConversions(Media $media = null): void
     {
-        // Conversion pour une miniature (admin)
-        $this->addMediaConversion('thumb')
-            ->width(150)
-            ->height(150)
-            ->sharpen(10); // Améliore la netteté
 
-        // Conversion pour une image plus grande (index)
+        // conversion pour une image plus grande (index)
         $this->addMediaConversion('large')
-            ->width(800)
-            ->height(600)
-            ->sharpen(10); // Améliore la netteté
+            ->width(400)
+            ->height(200)
+            ->sharpen(10)
+            ->performOnCollections('vehicles'); // ← ← ← SUPER IMPORTANT
+
+            // Conversion pour une miniature (admin)
+         $this->addMediaConversion('thumb')
+         ->width(150)
+         ->height(150)
+         ->sharpen(10) // Améliore la netteté
+         ->performOnCollections('vehicles');
     }
     
 }

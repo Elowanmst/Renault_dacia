@@ -37,27 +37,27 @@
         
        
         <h3>Nos véhicules d'occasion</h3>
-            <div class="carousel-container">
-                <button class="prev">❮</button>
-                <div class="carousel">
-                    @foreach ($vehicles->where('type', 'used') as $vehicle)
-                        <div class="card-vehicle">
-                            <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
-                            <img src="{{ asset('storage/' . $vehicle->picture) }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image">
-                            <p class="description">{{ $vehicle->description }}</p>
-                            <div class="vehicle-details">
-                                <p>{{ __('year') }} : {{ $vehicle->year }}</p>
-                                <p>{{ __('mileage') }} : {{ $vehicle->mileage }} km</p>
-                                <p>{{ __('Transmission') }} : {{ $vehicle->transmission }}</p>
-                                <p>{{ __('horsepower') }} : {{ $vehicle->puissance }} CV</p>
-                                <p>{{ __('fuel') }} : {{ $vehicle->fuel }}</p>
-                                <p>{{ __('price') }} : {{ $vehicle->price }} €</p>
-                            </div>
+        <div class="carousel-container">
+            <button class="prev">❮</button>
+            <div class="carousel">
+                @foreach ($vehicles->where('type', 'used') as $vehicle)
+                    <div class="card-vehicle">
+                        <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
+                        <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'large') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}">
+                        {!! \Parsedown::instance()->text($vehicle->description) !!}
+                        <div class="vehicle-details">
+                            <p>{{ __('year') }} : {{ $vehicle->year }}</p>
+                            <p>{{ __('mileage') }} : {{ $vehicle->mileage }} km</p>
+                            <p>{{ __('Transmission') }} : {{ $vehicle->transmission }}</p>
+                            <p>{{ __('horsepower') }} : {{ $vehicle->puissance }} CV</p>
+                            <p>{{ __('fuel') }} : {{ $vehicle->fuel }}</p>
+                            <p>{{ __('price') }} : {{ $vehicle->price }} €</p>
                         </div>
-                    @endforeach
-                </div>
-                <button class="next">❯</button>
+                    </div>
+                @endforeach
             </div>
+            <button class="next">❯</button>
+        </div>
 
         <h3>Nos véhicules neuf</h3>
             <div class="carousel-container">
@@ -67,7 +67,7 @@
                         <div class="card-vehicle">
                             <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
                             <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'large') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}">
-                            <p class="description">{{ $vehicle->description }}</p>
+                            {!! \Parsedown::instance()->text($vehicle->description) !!}
                             <div class="vehicle-details">
                                 <p>{{ __('year') }} : {{ $vehicle->year }}</p>
                                 <p>{{ __('mileage') }} : {{ $vehicle->mileage }} km</p>
@@ -83,13 +83,7 @@
             </div>
 
         <h3>Expert ZE</h3>
-        @foreach ($vehicles as $vehicule)
-            <h2>{{ $vehicule->brand }}</h2>
-            @foreach ($vehicule->getMedia('images') as $media)
-                <img src="{{ $media->getUrl() }}" alt="Image véhicule" width="200">
-            @endforeach
-        @endforeach
-
+        
 
 
         
@@ -115,7 +109,7 @@
                 @foreach ($services as $services)
                     <div class="card" style="background-image: url('{{ asset('storage/' . $services->picture) }}'); background-size: cover; background-position: center;">
                         <h4>{{ $services->name }}</h4>
-                        <p>{{ $services->description }}</p>  
+                        {!! \Parsedown::instance()->text($services->description) !!}
                     </div>
                 @endforeach
             </div>
@@ -129,7 +123,7 @@
                 @foreach ($exceptionalEvents as $exceptionalEvent)
                     <div class="exceptionalEvent-card">
                         <h4>{{ $exceptionalEvent->name }}</h4>
-                        <p>{{ $exceptionalEvent->description }}</p>
+                        {!! \Parsedown::instance()->text($exceptionalEvent->description) !!}
                         <p>{{ __('Date') }} : du {{ $exceptionalEvent->start_date->format('d/m/Y') }} au {{ $exceptionalEvent->end_date->format('d/m/Y') }}</p>
                     </div>
                 @endforeach
@@ -186,6 +180,7 @@
                 @foreach ($exceptionalClosures as $exceptionalClosure)
                     <div class="exceptionalClosure-card">
                         <p>Du : {{ $exceptionalClosure->start_date->format('d/m/Y') }} au {{ $exceptionalClosure->end_date->format('d/m/Y') }}</p>
+                        <p>Raison : {!! \Parsedown::instance()->text($exceptionalClosure->reason) !!}</p> <!-- Ajout de la raison -->
                     </div>
                 @endforeach
             </div>
