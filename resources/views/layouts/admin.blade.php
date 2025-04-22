@@ -39,9 +39,9 @@
             <li><a href="{{ route('job_offers.index') }}">{{ __('Recruitment') }}</a></li>
         </ul>
     
-        <form method="POST" action="{{ route('logout') }}" style="margin-top: 20px;">
+        <form method="POST" action="{{ route('logout') }}" >
             @csrf
-            <button type="submit" class="btn btn-danger">🚪 Logout</button>
+            <button type="submit" class="btn">Logout</button>
         </form>
     </div>
 

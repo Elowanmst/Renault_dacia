@@ -52,13 +52,11 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
-
 .main-content h2 {
     font-size: 24px;
     font-weight: bold;
     color: #333;
 }
-
 .stats-container {
     display: flex;
     flex-wrap: wrap;
@@ -74,8 +72,50 @@ body {
     margin-bottom: 20px;
     width: 25%;
     height: 50%;
+}
 
+.home-bg-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 
+}
+input[type=file] {
+    width: 350px;
+    max-width: 100%;
+    color: #222245;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #222245;
+  }
+  
+  input[type=file]:focus {
+    outline: 2px dashed #222245;
+    outline-offset: 2px;
+  }
+  
+  input[type=file]::file-selector-button {
+    background-color: #404040; 
+    color: #ffffff; 
+    border: none;
+    border-radius: 4px; 
+    padding: 15px 20px; 
+    font-size: 13px; 
+    cursor: pointer; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.2s ease-in-out; 
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    transform: scale(1.1); 
+    background-color: #000000; 
+    color: #ffcc00;
+  }
+.form-text.text-muted {
+    font-size: 0.875rem;
+    color: #6c757d;
 }
 
 .admin-form textarea {
@@ -128,7 +168,6 @@ td a {
 .details td form {
     display: inline;
 }
-
 .container a[href*="vehicles.create"] {
     display: inline-block;
     background: #28a745;
@@ -213,8 +252,6 @@ td a {
 }
 
 
-
-
 /* Boutons */
 .back-btn {
     background-color: #404040; 
@@ -226,6 +263,7 @@ td a {
     cursor: pointer; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     transition: transform 0.2s ease-in-out; 
+    text-decoration: none;
 }
 .back-btn:hover {
   transform: scale(1.1); 
@@ -240,6 +278,7 @@ td a {
     text-decoration: none;
     font-weight: bold;
     border: none;
+    cursor: pointer;
 }
 .btn:hover {
     background: #0056b3;
@@ -249,12 +288,14 @@ td a {
     background-color: #ffcc00;
     color: rgb(0, 0, 0);
 }
+.btn-danger:hover{
+    background-color: #ff9900;
+}
 
 .btn-success {
     background-color: #10b981;
     color: white;
 }
-
 .btn-success:hover {
     background-color: #059669;
 }
@@ -267,7 +308,6 @@ td a {
     cursor: pointer;
     border-radius: 4px;
 }
-
 .btn-delete:hover {
     background: #c82333;
 }
