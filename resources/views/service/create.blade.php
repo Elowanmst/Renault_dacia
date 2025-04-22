@@ -17,9 +17,9 @@
                 <input type="text" name="name" class="form-control" value="{{ old('name') }}">
             </div>
             <div class="form-group">
-                <label for="picture">{{ __('picture') }}</label>
-                <input type="file" name="picture" class="form-control" >
-            </div> 
+                <label for="picture">Image</label>
+                <input type="file" name="picture" id="picture" class="form-control" accept="image/*">
+            </div>
             
             <div class="form-group">
                 <label for="description">{{ __('Description') }}</label>
