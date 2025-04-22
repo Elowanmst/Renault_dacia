@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
+use Parsedown;
 
 class VehicleController extends Controller
 {
@@ -13,6 +14,12 @@ class VehicleController extends Controller
     public function index()
     {
         $vehicles = Vehicle::paginate(10);
+        $parsedown = new Parsedown();
+
+        foreach ($vehicles as $vehicle) {
+            $vehicle->description = $parsedown->text($vehicle->description);
+        }    
+
         return view('vehicle.index', compact('vehicles'));
     }
 
@@ -46,13 +53,13 @@ class VehicleController extends Controller
             // 'color' => 'nullable|string',
         ]);
 
-        $vehicle = Vehicle::find(6); // Remplacez 1 par l'ID d'un véhicule existant
-        dd($vehicle->getFirstMediaUrl('vehicles', 'large'));
+        // $vehicle = Vehicle::find(6); // Remplacez 1 par l'ID d'un véhicule existant
+        
 
         $vehicle = Vehicle::create($request->except('picture'));
 
         if ($request->hasFile('picture')) {
-            $vehicle->addMediaFromRequest('picture')->toMediaCollection('vehicles');
+            $vehicle->addMedia($request->file('picture'))->toMediaCollection('vehicles');
         }
 
         return redirect()->route('vehicles.index');

@@ -54,3 +54,6 @@ Route::resource('team_members', TeamMemberController::class)->middleware(['auth'
 
 // Routes pour les jobs
 Route::resource('job_offers', JobOfferController::class)->middleware(['auth']);
+
+//route temporaire
+
