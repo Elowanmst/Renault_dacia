@@ -5,8 +5,8 @@
 <div class="vehicle-container">
     
     <div class="vehicleImg">
-        @if ($vehicle->getFirstMediaUrl('vehicles', 'thumb'))
-            <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'thumb') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}">
+        @if ($vehicle->getFirstMediaUrl('vehicles', 'show'))
+            <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'show') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}">
         @else
             <p>{{ __('No image available') }}</p>
         @endif
