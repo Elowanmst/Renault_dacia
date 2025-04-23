@@ -47,10 +47,16 @@ class Vehicle extends Model implements HasMedia
 
             // Conversion pour une miniature (admin)
          $this->addMediaConversion('thumb')
-         ->width(150)
-         ->height(150)
-         ->sharpen(10) // Améliore la netteté
-         ->performOnCollections('vehicles');
+            ->width(150)
+            ->height(150)
+            ->sharpen(10) // Améliore la netteté
+            ->performOnCollections('vehicles');
+
+         $this->addMediaConversion('show')
+            ->width(600)
+            ->height(300)
+            ->sharpen(10) // Améliore la netteté
+            ->performOnCollections('vehicles');
     }
     
 }
