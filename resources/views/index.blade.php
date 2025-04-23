@@ -82,6 +82,27 @@
 
         <h3>Expert ZE</h3>
         
+            <div class="carousel-container">
+                <button class="prev">❮</button>
+                <div class="carousel">
+                    @foreach ($vehicles->where('fuel', 'electric') as $vehicle)
+                        <div class="card-vehicle">
+                            <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
+                            <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'large') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}">
+                            {!! \Parsedown::instance()->text($vehicle->description) !!}
+                            <div class="vehicle-details">
+                                <p>{{ __('year') }} : {{ $vehicle->year }}</p>
+                                <p>{{ __('mileage') }} : {{ $vehicle->mileage }} km</p>
+                                <p>{{ __('Transmission') }} : {{ $vehicle->transmission }}</p>
+                                <p>{{ __('horsepower') }} : {{ $vehicle->puissance }} CV</p>
+                                <p>{{ __('fuel') }} : {{ $vehicle->fuel }}</p>
+                                <p>{{ __('price') }} : {{ $vehicle->price }} €</p>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <button class="next">❯</button>
+            </div>
 
 
         
