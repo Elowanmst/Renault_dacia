@@ -72,7 +72,7 @@ $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background') ? $homep
                     <p>{{ __('Transmission') }} : {{ $vehicle->transmission }}</p>
                     <p>{{ __('horsepower') }} : {{ $vehicle->puissance }} CV</p>
                     <p>{{ __('fuel') }} : {{ $vehicle->fuel }}</p>
-                    <p>{{ __('price') }} : {{ $vehicle->price }} €</p>
+                    <p>{{ __('price') }} : à partir de {{ $vehicle->price }} €</p>
                 </div>
             </div>
             @endforeach
