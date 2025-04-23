@@ -1,33 +1,45 @@
-@extends('layouts.admin')
-
-@section('styles')
-    @vite(['resources/css/admin/dashboard.css'])
-@endsection
+@extends('layouts.app')
 
 @section('content')
 
-    <div class="main-content">
-
-        <a class="back-btn" href="{{ url()->previous() }}">{{ __('back') }}</a>
-
-        <h1>{{ $vehicle->model }}</h1>
-        <p>{{ __('brand') }}: {{ $vehicle->brand }}</p>
-        <p>{{ __('year') }}: {{ $vehicle->year }}</p>
-        <p>{{ __('price') }}: {{ $vehicle->price }} €</p>
+<div class="vehicle-container">
+    
+    <div class="vehicleImg">
         @if ($vehicle->getFirstMediaUrl('vehicles', 'thumb'))
             <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'thumb') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}">
         @else
             <p>{{ __('No image available') }}</p>
         @endif
-        <p><small>{{ __('created at') }} {{ $vehicle->created_at->format('M d, Y') }}</small></p>
-
-        <div>
-            <a href="{{ route('vehicles.edit', $vehicle) }}">{{ __('edit') }}</a>
-            <form action="{{ route('vehicles.destroy', $vehicle) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button class="btn-delete" type="submit">{{ __('delete') }}</button>
-            </form>
-        </div>
     </div>
+
+    <div>
+        <h1 class="">{{ $vehicle->brand }} {{ $vehicle->model }}</h1>
+        <h3>{{ $vehicle->price }} €</h3>
+    </div>
+
+    <div class="vehicleInfo">
+
+        <h2>{{ __('Caracteristiques') }}</h2>
+        <p>{{ $vehicle->brand }} {{ $vehicle->model }}</p>
+        
+        <p>{{ __('brand') }}: {{ $vehicle->brand }}</p>
+        <p>{{ __('model') }}: {{ $vehicle->model }}</p>
+        <p>{{ __('year') }}: {{ $vehicle->year }}</p>
+        <p>{{ __('price') }}: {{ $vehicle->price }} €</p>
+        
+        <p><small>{{ __('Added at') }} {{ $vehicle->created_at->format('M d, Y') }}</small></p>
+    </div>
+    
+</div>
+
+<a href="{{ url()->previous() }}" class="btn-back">Retour</a>
+
+<button id="openModal" class="btn-primary">Contactez-nous</button>
+
+<footer>
+    <p>© 2025 - Garage du Centre RENAULT | DACIA  </p>
+    <br>
+    <p>created by ec-craft.fr  </p>
+</footer>
+
 @endsection
