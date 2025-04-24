@@ -45,11 +45,11 @@ $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background') ? $homep
                 {{-- {!! \Parsedown::instance()->text($vehicle->description) !!} --}}
                 <div class="vehicle-details">
                     <p>{{ __('year') }} : {{ $vehicle->year }}</p>
-                    <p>{{ __('mileage') }} : {{ $vehicle->mileage }} km</p>
+                    <p>{{ __('mileage') }} : {{ $vehicle->formatted_mileage }} km</p>
                     <p>{{ __('Transmission') }} : {{ $vehicle->transmission }}</p>
                     <p>{{ __('horsepower') }} : {{ $vehicle->puissance }} CV</p>
                     <p>{{ __('fuel') }} : {{ $vehicle->fuel }}</p>
-                    <p>{{ __('price') }} : {{ $vehicle->price }} €</p>
+                    <p>{{ __('price') }} : {{ $vehicle->formatted_price }} €</p>
                 </div>
             </div>
             @endforeach
@@ -68,11 +68,11 @@ $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background') ? $homep
                 {{-- {!! \Parsedown::instance()->text($vehicle->description) !!} --}}
                 <div class="vehicle-details">
                     <p>{{ __('year') }} : {{ $vehicle->year }}</p>
-                    <p>{{ __('mileage') }} : {{ $vehicle->mileage }} km</p>
+                    <p>{{ __('mileage') }} : {{ $vehicle->formatted_mileage }} </p>
                     <p>{{ __('Transmission') }} : {{ $vehicle->transmission }}</p>
                     <p>{{ __('horsepower') }} : {{ $vehicle->puissance }} CV</p>
                     <p>{{ __('fuel') }} : {{ $vehicle->fuel }}</p>
-                    <p>{{ __('price') }} : à partir de {{ $vehicle->price }} €</p>
+                    <p>{{ __('price') }} : à partir de {{ $vehicle->formatted_price }} </p>
                 </div>
             </div>
             @endforeach
@@ -92,11 +92,11 @@ $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background') ? $homep
                 {!! \Parsedown::instance()->text($vehicle->description) !!}
                 <div class="vehicle-details">
                     <p>{{ __('year') }} : {{ $vehicle->year }}</p>
-                    <p>{{ __('mileage') }} : {{ $vehicle->mileage }} km</p>
+                    <p>{{ __('mileage') }} : {{ $vehicle->formatted_mileage }} km</p>
                     <p>{{ __('Transmission') }} : {{ $vehicle->transmission }}</p>
                     <p>{{ __('horsepower') }} : {{ $vehicle->puissance }} CV</p>
                     <p>{{ __('fuel') }} : {{ $vehicle->fuel }}</p>
-                    <p>{{ __('price') }} : {{ $vehicle->price }} €</p>
+                    <p>{{ __('price') }} : {{ $vehicle->formatted_price }} €</p>
                 </div>
             </div>
             @endforeach
