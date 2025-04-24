@@ -243,18 +243,15 @@ td a {
     margin-bottom: 20px;
     color: #333;
 }
-
 .form-group {
     margin-bottom: 15px;
 }
-
 .form-group label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
     color: #333;
 }
-
 .form-group input, 
 .form-group select {
     width: 100%;
@@ -264,7 +261,6 @@ td a {
     font-size: 14px;
     box-sizing: border-box;
 }
-
 .form-group input:focus, 
 .form-group select:focus {
     border-color: #3b82f6;
@@ -287,6 +283,31 @@ td a {
 
 .btn-form[type="submit"]:hover {
     background-color: #2563eb;
+}
+
+
+/* Pages SHOW */
+.admin-show {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 50%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.admin-show h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+.btn-show {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
 }
 
 /* Stats */
@@ -355,6 +376,17 @@ td a {
 }
 .btn-delete:hover {
     background: #c82333;
+}
+.btn-edit {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.btn-edit:hover {
+    background: #0056b3;
 }
 
 /* Responsive */
