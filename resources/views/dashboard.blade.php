@@ -80,6 +80,7 @@
                 </div>
                 <button class="btn btn-primary" type="submit">{{ __('Update background') }}</button>
             </form>
+            <button class="" id="reset-background">{{ __('Reset background') }}</button>
         </div>
         
     </div>

@@ -37,4 +37,6 @@ class HomepageController extends Controller
 
         return redirect()->back()->with('success', 'Image de fond mise à jour avec succès.');
     }
+
+    
 }
