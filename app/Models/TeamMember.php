@@ -2,10 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class TeamMember extends Model
+class TeamMember extends Model implements HasMedia
 {
+    use HasFactory, InteractsWithMedia;
+
     protected $fillable = [
         'name',
         'email',
@@ -13,5 +19,20 @@ class TeamMember extends Model
         'profile_picture',
         'bio',
     ];
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('profile_pictures')->singleFile(); // Une seule image par membre
+    }
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('team-home')
+            ->width(100)
+            ->height(100)
+            ->sharpen(10)
+            ->performOnCollections('profile_pictures');
+    }
+
 
 }

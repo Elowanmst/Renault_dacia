@@ -113,10 +113,33 @@ $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background') ? $homep
 <section id="garage">
     <h2>Votre garage</h2>
     
-    <div class="">
-        <h3>Notre équipe</h3>
-        
-        
+    <div class="equipe-section">
+        <div class="container-team">
+            <h3 class="equipe-title">Notre Équipe</h3>
+    
+            @php
+                $groupes = $teamMembers->groupBy('role');
+            @endphp
+    
+            @foreach ($groupes as $role => $membres)
+                <h4 class="role-title">{{ ucfirst($role) }}</h4>
+    
+                <div class="equipe-grid">
+                    @foreach ($membres as $membre)
+                        <div class="card-team">
+                            <img 
+                            src="{{ $membre->getFirstMediaUrl('profile_pictures', 'team-home') }}" 
+                            alt="{{ $membre->name }}" 
+                            class="avatar">
+
+                            <h4 class="name-team">{{ $membre->name }}</h4>
+                            <p class="fonction-team">{{ ucfirst($membre->role) }}</p>
+                            <p class="bio-team">{{ Str::limit($membre->bio, 100) }}</p>
+                        </div>
+                    @endforeach
+                </div>
+            @endforeach
+        </div>
     </div>
     
     <div class="solution-content">
