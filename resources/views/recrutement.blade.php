@@ -38,7 +38,7 @@
                             <p><strong>Responsabilités :</strong></p>
                             <div>{!! $jobOffer->responsibilities !!}</div>
 
-                            <p><strong>Rémunération :</strong> {{ $jobOffer->salary_description }} €</p>
+                            <p><strong>Rémunération :</strong> {{ $jobOffer->salary_description }} </p>
                             
                         </div>
 

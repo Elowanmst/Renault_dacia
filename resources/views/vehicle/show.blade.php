@@ -32,7 +32,7 @@
     
 </div>
 
-<a href="{{ url()->previous() }}" class="btn-back">Retour</a>
+<a href="{{ route('index') }}#service" class="btn-back">Retour</a>
 
 <button id="openModal" class="btn-primary">Contactez-nous</button>
 

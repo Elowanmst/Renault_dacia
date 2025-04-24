@@ -58,6 +58,16 @@ class Vehicle extends Model implements HasMedia
             ->sharpen(10) // Améliore la netteté
             ->performOnCollections('vehicles');
     }
+
+    public function getFormattedPriceAttribute()
+    {
+        return number_format($this->price, 0, ',', ' ') . ' €';
+    }
+
+    public function getFormattedMileageAttribute()
+    {
+        return number_format($this->mileage, 0, ',', ' ') . ' km';
+    }
     
 }
 
