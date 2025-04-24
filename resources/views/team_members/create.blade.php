@@ -31,7 +31,7 @@
         </div>
         <div class="form-group">
             <label for="profile_picture">{{ __('Photo') }}</label>
-            <input type="file" name="profile_picture" class="form-control" >
+            <input type="file" name="profile_picture" class="form-control">
         </div>
         
         <button type="submit" class="btn btn-primary">{{ __('create') }}</button>

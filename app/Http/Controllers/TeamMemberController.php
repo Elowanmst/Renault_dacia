@@ -33,12 +33,16 @@ class TeamMemberController extends Controller
             'name' => 'required|string|max:255',
             'role' => 'required|string|max:255',
             'email' => 'nullable|email|max:255' ,
-            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'profile_picture' => 'nullable|file',
             'experience' => 'nullable|string|max:255',
             'bio' => 'nullable|string',
         ]);
 
-        TeamMember::create($request->all());
+        $teamMember = TeamMember::create($request->except('profile_picture'));
+
+        if ($request->hasFile('profile_picture')) {
+            $teamMembers->addMedia($request->file('profile_picture'))->toMediaCollection('teamMembers');
+        }
 
         return redirect()->route('team_members.index')->with('success', 'Team member created successfully.');
     }
@@ -74,6 +78,11 @@ class TeamMemberController extends Controller
         ]);
 
         $teamMember->update($request->all());
+
+        if ($request->hasFile('profile_picture')) {
+            $teamMember->clearMediaCollection('profile_pictures'); // Supprime l'ancienne image
+            $teamMember->addMedia($request->file('profile_picture'))->toMediaCollection('profile_pictures');
+        }
 
         return redirect()->route('team_members.index')->with('success', 'Team member updated successfully.');
     }
