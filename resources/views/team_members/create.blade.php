@@ -29,11 +29,27 @@
         </div>
         <div class="form-group">
             <label for="role">{{ __('Role') }}</label>
-            <input type="text" name="role" class="form-control" value="{{ old('role') }}">
+            <select name="role" id="role" class="form-control">
+                <option value="">{{ __('Select Role') }}</option>
+                <option value="director">{{ __('Directeur/trice') }}</option>
+                <option value="mechanic">{{ __('Mécanicien') }}</option>
+                <option value="chief_mechanic">{{ __('Chef Mécanicien') }}</option>
+                <option value="sales">{{ __('Commercial') }}</option>
+                <option value="customer_relations">{{ __('Relation Client') }}</option>
+            </select>
             @error('role')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
+
+        {{-- <div class="form-group">
+            <label for="role">{{ __('Role') }}</label>
+            <input type="text" name="role" class="form-control" value="{{ old('role') }}">
+            @error('role')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div> --}}
+
         <div class="form-group">
             <label for="bio">{{ __('Bio') }}</label>
             <input type="text" name="bio" class="form-control" value="{{ old('bio') }}">
