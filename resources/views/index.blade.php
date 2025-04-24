@@ -128,9 +128,10 @@ $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background') ? $homep
                     @foreach ($membres as $membre)
                         <div class="card-team">
                             <img 
-                            src="{{ $membre->getFirstMediaUrl('profile_pictures', 'team-home') }}" 
+                            src="{{ $membre->getFirstMediaUrl('teamMembers', 'team-home') }}" 
                             alt="{{ $membre->name }}" 
                             class="avatar">
+
 
                             <h4 class="name-team">{{ $membre->name }}</h4>
                             <p class="fonction-team">{{ ucfirst($membre->role) }}</p>

@@ -21,5 +21,12 @@
                 <button class="btn-delete" type="submit">{{ __('delete') }}</button>
             </form>
         </div>
+        <div class="profile-picture">
+            @if ($teamMember->getFirstMediaUrl('teamMembers', 'team-home'))
+                <img src="{{ $teamMember->getFirstMediaUrl('teamMembers', 'team-home') }}" alt="">
+            @else
+                <p>{{ __('No image available') }}</p>
+            @endif
+        </div>
     </div>
 @endsection

@@ -41,7 +41,7 @@ class TeamMemberController extends Controller
         $teamMember = TeamMember::create($request->except('profile_picture'));
 
         if ($request->hasFile('profile_picture')) {
-            $teamMembers->addMedia($request->file('profile_picture'))->toMediaCollection('teamMembers');
+            $teamMember->addMedia($request->file('profile_picture'))->toMediaCollection('teamMembers');
         }
 
         return redirect()->route('team_members.index')->with('success', 'Team member created successfully.');

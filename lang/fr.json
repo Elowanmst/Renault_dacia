@@ -20,6 +20,7 @@
     "created at": "Date de création",
     "updated at": "Date de mise à jour",
     "Update background": "Mettre à jour l'arrière-plan",
+    "Reset background": "Réinitialiser l'arrière-plan",
     
     "delete": "Supprimer",
     "edit": "Modifier",
@@ -80,7 +81,7 @@
     "vehicles list": "Mes véhicules",
     "vehicle details": "Détails du véhicule",
     "vehicle management": "Gestion des véhicules",
-    "add vehicle": "+ Ajouter un véhicule",
+    "add vehicle": "Ajouter un véhicule",
     "edit vehicle": "Modifier le véhicule",
     "update vehicle": "Mettre à jour le véhicule",
     "delete vehicle": "Supprimer le véhicule",
@@ -107,7 +108,7 @@
     "Manual": "Manuel",
 
     "day": "Jour",
-    "Add opening hours": "+ Ajouter des horaires",
+    "Add opening hours": "Ajouter des horaires",
     "Opening hours": "Horaires",
     "morningOpening": "Ouverture matin",
     "morningClosing": "Fermeture matin",
@@ -124,7 +125,7 @@
     "opening hours list": "Liste des horaires d'ouverture",
     "selectDay": "Sélectionner un jour",
 
-    "add service": "+ Ajouter un service",
+    "add service": "Ajouter un service",
     "edit service": "Modifier le service",
     "service list": "Liste des services",
 
