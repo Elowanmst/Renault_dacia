@@ -38,5 +38,15 @@ class HomepageController extends Controller
         return redirect()->back()->with('success', 'Image de fond mise à jour avec succès.');
     }
 
+    public function resetBackground()
+    {
+        $homepage = Homepage::firstOrCreate(['id' => 1]);
+
+        // Supprime l’ancienne image si elle existe
+        $homepage->clearMediaCollection('background');
+
+        return redirect()->back()->with('success', 'Image de fond réinitialisée avec succès.');
+    }
+
     
 }

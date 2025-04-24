@@ -60,5 +60,6 @@ Route::resource('job_offers', JobOfferController::class)->middleware(['auth']);
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/homepage/background/edit', [HomepageController::class, 'editBackground'])->name('admin.homepage.edit');
     Route::post('/homepage/background/update', [HomepageController::class, 'updateBackground'])->name('admin.homepage.updateBackground');
+    Route::post('/homepage/background/reset', [HomepageController::class, 'resetBackground'])->name('admin.homepage.resetBackground');
 });
 

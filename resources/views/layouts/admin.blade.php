@@ -15,6 +15,7 @@
     @yield('styles')
 
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/gif" href="img/favicon-renault.svg"/>
 
 </head>

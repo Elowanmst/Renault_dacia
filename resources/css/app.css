@@ -258,7 +258,7 @@ button:hover, .btn:hover {
     cursor: pointer;
 }
 .card-vehicle:hover {
-    background-color: #d8d8d844;
+    background-color: #c2c2c244;
 }
 .card-vehicle img {
     /* height: auto; */
