@@ -97,26 +97,22 @@ nav {
     z-index: 20;
 }
 
-/* nav.mask {
-mask-image: linear-gradient(black 70%, transparent);
--webkit-mask-image: linear-gradient(black 70%, transparent);
-} */
 
 nav .nav-title {
     font-size: 24px;
-    /* font-weight: bold; */
 }
-
+.nav-title a {
+    text-decoration: none;
+    color: white;
+}
 nav .nav-links {
     display: flex;
     gap: 20px;
     list-style: none;
 }
-
 nav .nav-links li {
     margin: 0;
 }
-
 nav .nav-links li a {
     text-decoration: none;
     color: white;
@@ -124,18 +120,15 @@ nav .nav-links li a {
     padding: 10px 15px;
     /* transition: background 0.3s ease; */
 }
-
 nav .nav-links li a:hover {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
 }
-
 @media (min-width: 640px) {
     nav {
         padding: 16px 50px;
     }
 }
-
 nav.is-hidden {
     transform: translateY(-100%);
 }
@@ -156,7 +149,6 @@ section {
     border-radius: 0px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 section#top {
     background: -webkit-linear-gradient(
         114deg,
@@ -176,18 +168,14 @@ section#top {
 #top p {
     color: rgb(0, 0, 0);
 }
-
-section#service,
-section#garage,
-section#recrutement,
-section#loc,
-section#contact {
+section#service, section#garage, section#recrutement, section#loc, section#contact {
     border-left: 5px solid #000000;
 }
 
+
+
 /*Boutons*/
-button,
-.btn {
+button, .btn {
     display: inline-block;
     background-color: #ffcc00;
     color: #1b1b18;
@@ -199,11 +187,10 @@ button,
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
-button:hover,
-.btn:hover {
+button:hover, .btn:hover {
     background-color: #e6b800;
 }
+
 
 /* Listes personnalisées */
 .custom-list {
@@ -211,15 +198,15 @@ button:hover,
     padding: 0;
     margin: 0;
 }
-
 .custom-list li {
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
 }
-
 .custom-list li:last-child {
     border-bottom: none;
 }
+
+
 
 /* Cartes */
 .solution-cards {
@@ -230,7 +217,6 @@ button:hover,
     margin-top: 50px;
     margin-bottom: 70px;
 }
-
 .card {
     width: 300px;
     height: 300px;
@@ -239,26 +225,23 @@ button:hover,
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    color: white;
+    /* color: white; */
     text-align: center;
     flex: 1 1 calc(33.333% - 40px);
     max-width: calc(33.333% - 40px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 1;
 }
-
 .carousel-container {
     overflow: hidden; /* Masque les éléments qui débordent */
     width: 100%;
     margin-bottom: 20px;
 }
-
 .carousel {
     display: flex;
     gap: 15px; /* Espacement entre les cartes */
     transition: transform 0.3s ease-in-out;
 }
-
 .card-vehicle {
     flex: 0 0 300px; /* Largeur fixe des cartes */
     height: auto;
@@ -277,7 +260,7 @@ button:hover,
     background-color: #d8d8d844;
 }
 .card-vehicle img {
-    height: auto;
+    /* height: auto; */
     border-radius: 8px;
     margin-bottom: 10px;
 }
@@ -376,14 +359,14 @@ button.next {
 }
 
 .card h4 {
-    color: #ffffff;
+    /* color: #ffffff; */
     margin-bottom: 10px;
     position: relative;
     z-index: 2;
     font-size: 23px;
 }
 .card p {
-    color: #ffffff;
+    /* color: #ffffff; */
     position: relative;
     z-index: 2;
 }

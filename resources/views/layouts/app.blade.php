@@ -33,7 +33,7 @@
 
 <body>
     <nav class="nav mask">
-        <div class="nav-title"> Garage du Centre</div>
+        <div class="nav-title"><a href="{{ route('index') }}"> Garage du Centre</a></div>
         <ul class="nav-links list">
 
             @auth
