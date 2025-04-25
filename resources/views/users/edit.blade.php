@@ -18,12 +18,18 @@
 
         <div class="form-group">
             <label for="name">{{ __('name') }}</label>
-            <input type="text" name="name" id="name" class="form-control" value="{{ $user->name }}" required>
+            <input type="text" name="name" id="name" class="form-control" value="{{ old('name', $user->name) }}" required>
+            @error('name')
+                <span class="error-message">{{ $message }}</span>
+            @enderror
         </div>
 
         <div class="form-group">
             <label for="email">{{ __('email') }}</label>
-            <input type="email" name="email" id="email" class="form-control" value="{{ $user->email }}" required>
+            <input type="email" name="email" id="email" class="form-control" value="{{ old('email', $user->email) }}" required>
+            @error('email')
+                <span class="error-message">{{ $message }}</span>
+            @enderror
         </div>
 
         <button type="submit" class="btn">{{ __('confirm') }}</button>

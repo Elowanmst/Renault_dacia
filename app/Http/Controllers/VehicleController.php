@@ -50,10 +50,7 @@ class VehicleController extends Controller
             'transmission' => 'nullable|string',
             'puissance' => 'nullable|integer',
             'type' => 'nullable|in:new,used',
-            // 'color' => 'nullable|string',
         ]);
-
-        // $vehicle = Vehicle::find(6); // Remplacez 1 par l'ID d'un véhicule existant
         
 
         $vehicle = Vehicle::create($request->except('picture'));
@@ -86,16 +83,38 @@ class VehicleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
+        $vehicle = Vehicle::findOrFail($id);
+
+        // Valider les données
         $data = $request->validate([
-            'name' => 'required',
-            'description' => 'required',
+            'brand' => 'required|string|max:255',
+            'model' => 'required|string|max:255',
+            'year' => 'required|integer',
+            'price' => 'required|numeric',
+            'fuel' => 'required|string',
+            'type' => 'required|string|in:new,used',
+            'mileage' => 'required|integer',
+            'transmission' => 'required|string',
+            'puissance' => 'required|integer',
+            'description' => 'required|string',
+            'picture' => 'nullable|image|max:5120|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
-        Vehicle::where('id', $id)->update($data);
+        // Mettre à jour les autres champs
+        $vehicle->update($data);
 
-        return redirect()->route('vehicles.index');
+        // Vérifier si une nouvelle image a été téléchargée
+        if ($request->hasFile('picture')) {
+            // Supprimer l'ancienne image
+            $vehicle->clearMediaCollection('vehicles');
+
+            // Ajouter la nouvelle image
+            $vehicle->addMediaFromRequest('picture')->toMediaCollection('vehicles');
+        }
+
+        return redirect()->route('vehicles.index')->with('success', __('Vehicle updated successfully.'));
     }
 
     /**

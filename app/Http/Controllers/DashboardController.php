@@ -20,8 +20,8 @@ class DashboardController extends Controller
         $usersCount = User::count();
         $exceptionalClosures = ExceptionalClosure::all();
         $exceptionalEvents = ExceptionalEvent::all();
-        $teamMembers = TeamMember::all();
-        $jobOffers = JobOffer::all();
+        // $teamMembers = TeamMember::all();
+        // $jobOffers = JobOffer::all();
 
 
         return view('dashboard', [
@@ -30,8 +30,8 @@ class DashboardController extends Controller
             'usersCount' => $usersCount,
             'exceptionalClosures' => $exceptionalClosures,
             'exceptionalEvents' => $exceptionalEvents,
-            'teamMembers' => $teamMembers,
-            'jobOffers' => $jobOffers,
+            // 'teamMembers' => $teamMembers,
+            // 'jobOffers' => $jobOffers,
         ]);
     }
 }

@@ -17,7 +17,8 @@
 
             <table class="details">
                 <thead>
-                    <tr>    
+                    <tr>
+                        <th>{{ __('picture') }}</th>
                         <th>{{ __('brand') }}</th>
                         <th>{{ __('model') }}</th>
                         <th>{{ __('year') }}</th>
@@ -28,6 +29,13 @@
                 <tbody>
                     @foreach($vehicles as $vehicle)
                     <tr onclick="window.location='{{ route('vehicles.show', $vehicle) }}'" style="cursor: pointer;">
+                        <td>
+                            @if ($vehicle->getFirstMediaUrl('vehicles', 'thumb'))
+                                <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'thumb') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}">
+                            @else
+                                <p>{{ __('No image available') }}</p>
+                            @endif
+                        </td>
                         <td>{{ $vehicle->brand }}</td>
                         <td>{{ $vehicle->model }}</td>
                         <td>{{ $vehicle->year }}</td>
