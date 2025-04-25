@@ -27,6 +27,7 @@ Route::get('/recrutement', [JobOfferController::class, 'publicIndex'])->name('re
 // Routes pour les véhicules
 Route::resource('vehicles', VehicleController::class)->except(['show', 'index'])->middleware(['auth']);
 Route::resource('vehicles', VehicleController::class)->only(['show', 'index']);
+Route::get('vehicles/{vehicle}/details', [VehicleController::class, 'showDetails'])->name('vehicles.details');
 
 // Routes pour les utilisateurs
 Route::resource('users', UserController::class)->middleware(['auth']);

@@ -33,7 +33,7 @@ class ExceptionalEventController extends Controller
             'name' => 'required|string|max:255',
             'start_date' => 'required|date',
             'end_date' => 'required|date|after_or_equal:start_date',
-            'description' => 'nullable|string',
+            'description' => 'nullable|string|max:1000',
             'location' => 'nullable|string|max:255',
         ]);
 

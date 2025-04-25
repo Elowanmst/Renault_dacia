@@ -12,6 +12,10 @@ body {
     cursor: pointer;
     background: none;
 }
+.flex {
+    display: flex;
+    gap: 60px;
+}
 
 /* Sidebar */
 .sidebar {
@@ -304,11 +308,35 @@ td a {
     margin-bottom: 20px;
     color: #333;
 }
+.vehicle-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.vehicle-info i,
+.admin-show i {
+    color: #666; 
+    font-weight: 501; 
+    font-size: 1rem;
+    margin-right: 6px;
+    opacity: 0.85;
+}
 .btn-show {
     display: flex;
     width: 100%;
     justify-content: space-around;
 }
+.btn-show i {
+    color: #fff;
+}
+.img-show {
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
 
 /* Stats */
 .stat{
@@ -384,6 +412,8 @@ td a {
     padding: 6px 12px;
     cursor: pointer;
     border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
 }
 .btn-edit:hover {
     background: #0056b3;
