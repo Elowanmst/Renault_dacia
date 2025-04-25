@@ -29,7 +29,13 @@
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->created_at->format('d/m/Y') }}</td>
+                        <td>
+                            @if ($user->created_at)
+                                {{ $user->created_at->format('d/m/Y') }}
+                            @else
+                                {{ __('N/A') }} <!-- Affiche "N/A" ou un autre texte si la date est manquante -->
+                            @endif
+                        </td>
                         <td>
                             <a href="{{ route('users.show', $user) }}">{{ __('view') }}</a>
                         </td>
