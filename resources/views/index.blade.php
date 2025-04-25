@@ -161,7 +161,7 @@ $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background') ? $homep
     
     
     @if ($exceptionalEvents->isNotEmpty())
-    <h3>Événements à ne pas manquer</h3>
+    <h3 class="EM">Événements à ne pas manquer</h3>
     <div class="exceptionalEvents-container">
         @foreach ($exceptionalEvents as $exceptionalEvent)
         <div class="exceptionalEvent-card">
@@ -218,7 +218,7 @@ $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background') ? $homep
     </table>
     
     @if ($exceptionalClosures->isNotEmpty())
-    <h3>Fermeture exceptionelle</h3>
+    <h3 class="FE">Fermeture exceptionelle</h3>
     <div class="exceptionalClosures-container">
         @foreach ($exceptionalClosures as $exceptionalClosure)
         <div class="exceptionalClosure-card">
