@@ -18,10 +18,14 @@
         @endif --}}
         
         @if ($vehicle->getMedia('vehicles')->isNotEmpty())
-        <div class="gallery">
-            @foreach ($vehicle->getMedia('vehicles') as $media)
-            <img src="{{ $media->getUrl('thumb') }}" alt="Image véhicule" class="img-show">
-            @endforeach
+        <div class="carousel-container-detail">
+            <button class="prev-detail">❮</button>
+                <div class="carousel-detail">
+                    @foreach ($vehicle->getMedia('vehicles') as $media)
+                        <img src="{{ $media->getUrl('admin-show') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image-detail">
+                    @endforeach
+                </div>
+            <button class="next-detail">❯</button>
         </div>
         @else
         <p><i class="fas fa-image"></i>{{ __('No image available') }}</p>

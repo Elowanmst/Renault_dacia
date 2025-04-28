@@ -427,6 +427,61 @@ td a {
     background: #0056b3;
 }
 
+/* detail vehicule */
+.carousel-container-detail {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    max-height: 300px;
+    height: 100%;
+    margin: 0 auto;
+  }
+  
+  .carousel-detail {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+  }
+  
+  .vehicle-image-detail{
+    flex: 0 0 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  button.prev-detail,
+  button.next-detail {
+      position: absolute;
+      top: 60%;
+      transform: translateY(-50%);
+      background-color: #ffcc00c5;
+      color: #1b1b18;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      z-index: 10;
+  }
+  
+  button.prev-detail {
+    left: 10px;
+  }
+  
+  button.next-detail {
+    right: 10px;
+  }
+  
+  button.prev-detail:hover,
+  button.next-detail:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #ffffff;
+  }
+
 /* Responsive */
 
 

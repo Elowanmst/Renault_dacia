@@ -11,11 +11,17 @@
             <p>{{ __('No image available') }}</p>
         @endif
     </div> --}}
-    <div class="vehicleImg">
-        @foreach ($vehicle->getMedia('vehicles') as $media)
-            <img src="{{ $media->getUrl('show') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image">
-        @endforeach
+    <div class="carousel-container-show">
+        <button class="prev-show">❮</button>
+            <div class="carousel-show">
+                @foreach ($vehicle->getMedia('vehicles') as $media)
+                    <img src="{{ $media->getUrl('carousel') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image-show">
+                @endforeach
+            </div>
+        <button class="next-show">❯</button>
     </div>
+
+    
 
     <div>
         <h1 class="">{{ $vehicle->brand }} {{ $vehicle->model }}</h1>
