@@ -32,11 +32,11 @@ class HoraireController extends Controller
     {
         $data = $request->validate([
             'id' => 'nullable',
-            'day' => 'nullable',
-            'morningO' => 'nullable',
-            'morningC' => 'nullable',
-            'afternoonO' => 'nullable',
-            'afternoonC' => 'nullable',
+            'day' => 'required',
+            'morningO' => 'required',
+            'morningC' => 'required',
+            'afternoonO' => 'required',
+            'afternoonC' => 'required',
            
         ]);
 

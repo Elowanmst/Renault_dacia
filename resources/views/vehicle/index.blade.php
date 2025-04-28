@@ -28,7 +28,7 @@
                 </thead>
                 <tbody>
                     @foreach($vehicles as $vehicle)
-                    <tr onclick="window.location='{{ route('vehicles.show', $vehicle) }}'" style="cursor: pointer;">
+                    <tr onclick="window.location='{{ route('vehicles.details', $vehicle) }}'" style="cursor: pointer;">
                         <td>
                             @if ($vehicle->getFirstMediaUrl('vehicles', 'thumb'))
                                 <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'thumb') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}">

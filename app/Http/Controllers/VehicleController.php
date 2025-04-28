@@ -37,26 +37,39 @@ class VehicleController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'nullable',
-            'description' => 'nullable',
-            'price' => 'nullable|numeric',
-            'stock' => 'nullable',
-            'picture' => 'nullable|file',
-            'brand' => 'nullable|string',
-            'model' => 'nullable|string',
-            'fuel' => 'nullable|string',
-            'year' => 'nullable|integer',
-            'mileage' => 'nullable|integer',
-            'transmission' => 'nullable|string',
-            'puissance' => 'nullable|integer',
-            'type' => 'nullable|in:new,used',
+            'name' => 'nullable|string|max:255',
+            'description' => 'nullable|string|max:1000',
+            'price' => 'required|numeric|min:0',
+            'stock' => 'nullable|integer',
+            'picture' => 'required|array', // ATTENTION ici : picture doit être un tableau
+            'picture.*' => 'image|mimes:jpeg,png,jpg,gif,svg', // Chaque image validée
+            'brand' => 'required|string|max:255',
+            'model' => 'required|string|max:255',
+            'fuel' => 'required|string|max:255',
+            'year' => 'required|integer|digits:4',
+            'mileage' => 'required|integer|between:0,999999',
+            'transmission' => 'required|string|max:255',
+            'puissance' => 'required|integer|between:0,999',
+            'type' => 'required|in:new,used',
         ]);
         
 
         $vehicle = Vehicle::create($request->except('picture'));
 
+        // if ($request->hasFile('picture')) {
+        //     // $vehicle->addMedia($request->file('picture'))->toMediaCollection('vehicles');
+        //     // Gestion de plusieurs images
+        //     foreach ($request->file('picture') as $picture) {
+        //         $vehicle->addMedia($picture)
+        //                 ->toMediaCollection('vehicles');
+        //     }
+        // }
         if ($request->hasFile('picture')) {
-            $vehicle->addMedia($request->file('picture'))->toMediaCollection('vehicles');
+            foreach ($request->file('picture') as $picture) {
+                \Log::info('Adding picture: ' . $picture->getClientOriginalName());
+                $vehicle->addMedia($picture) 
+                        ->toMediaCollection('vehicles');
+            }
         }
 
         return redirect()->route('vehicles.index');
@@ -69,6 +82,11 @@ class VehicleController extends Controller
     {
         $vehicle = Vehicle::findOrFail($id);
         return view('vehicle.show', compact('vehicle'));
+    }
+    public function showDetails(string $id)
+    {
+        $vehicle = Vehicle::findOrFail($id);
+        return view('vehicle.details', compact('vehicle'));
     }
 
     /**
@@ -89,17 +107,19 @@ class VehicleController extends Controller
 
         // Valider les données
         $data = $request->validate([
+            'name' => 'nullable|string|max:255',
+            'description' => 'nullable|string|max:1000',
+            'price' => 'required|numeric|min:0',
+            'stock' => 'nullable|integer',
+            'picture' => 'required|file|image|max:5120|mimes:jpeg,png,jpg,gif,svg',
             'brand' => 'required|string|max:255',
             'model' => 'required|string|max:255',
-            'year' => 'required|integer',
-            'price' => 'required|numeric',
-            'fuel' => 'required|string',
-            'type' => 'required|string|in:new,used',
-            'mileage' => 'required|integer',
-            'transmission' => 'required|string',
-            'puissance' => 'required|integer',
-            'description' => 'required|string',
-            'picture' => 'nullable|image|max:5120|mimes:jpeg,png,jpg,gif,svg',
+            'fuel' => 'required|string|max:255',
+            'year' => 'required|integer|digits:4',
+            'mileage' => 'required|integer|digits_between:0,999999',
+            'transmission' => 'required|string|max:255',
+            'puissance' => 'required|integer|digits_between:0,999',
+            'type' => 'required|in:new,used',
         ]);
 
         // Mettre à jour les autres champs

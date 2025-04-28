@@ -24,14 +24,13 @@ class Vehicle extends Model implements HasMedia
         'fuel',
         'type',
         'price',
-        'picture',
         'color',
         'license_plate',
     ];
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('vehicles')->singleFile();
+        $this->addMediaCollection('vehicles');
     }
 
     
