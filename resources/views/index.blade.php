@@ -6,7 +6,7 @@
 
 @php
 $homepage = \App\Models\Homepage::first();
-$backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background') ? $homepage->getFirstMediaUrl('background') : asset('/img/devanture-color.jpg');
+$backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background', 'homepage-background') ? $homepage->getFirstMediaUrl('background', 'homepage-background') : asset('/img/devanture-color.jpg');
 @endphp
 
 <header>
@@ -294,7 +294,7 @@ $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background') ? $homep
 </div>
 
 
-
+{{-- renaultgarageducentre@gmail.com --}}
 
 
 

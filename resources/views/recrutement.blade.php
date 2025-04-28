@@ -38,6 +38,9 @@
                             <p><strong>Responsabilités :</strong></p>
                             <div>{!! $jobOffer->responsibilities !!}</div>
 
+                            <p><strong>Pourquoi nous rejoindre :</strong></p>
+                            <div>{!! $jobOffer->why_join_us !!}</div>
+
                             <p><strong>Rémunération :</strong> {{ $jobOffer->salary_description }} </p>
                             
                         </div>

@@ -41,8 +41,8 @@ class VehicleController extends Controller
             'description' => 'nullable|string|max:1000',
             'price' => 'required|numeric|min:0',
             'stock' => 'nullable|integer',
-            'picture' => 'required|array', // ATTENTION ici : picture doit être un tableau
-            'picture.*' => 'image|mimes:jpeg,png,jpg,gif,svg', // Chaque image validée
+            'pictures' => 'required|array', 
+            'pictures.*' => 'image|mimes:jpeg,png,jpg,gif,svg', // Chaque image validée
             'brand' => 'required|string|max:255',
             'model' => 'required|string|max:255',
             'fuel' => 'required|string|max:255',
@@ -54,8 +54,8 @@ class VehicleController extends Controller
         ]);
         
 
-        $vehicle = Vehicle::create($request->except('picture'));
-
+        $vehicle = Vehicle::create($request->except('pictures'));
+        //V2
         // if ($request->hasFile('picture')) {
         //     // $vehicle->addMedia($request->file('picture'))->toMediaCollection('vehicles');
         //     // Gestion de plusieurs images
@@ -64,11 +64,22 @@ class VehicleController extends Controller
         //                 ->toMediaCollection('vehicles');
         //     }
         // }
-        if ($request->hasFile('picture')) {
-            foreach ($request->file('picture') as $picture) {
-                \Log::info('Adding picture: ' . $picture->getClientOriginalName());
-                $vehicle->addMedia($picture) 
-                        ->toMediaCollection('vehicles');
+
+        //V1
+        // if ($request->hasFile('picture')) {
+        //     foreach ($request->file('picture') as $picture) {
+        //         \Log::info('Adding picture: ' . $picture->getClientOriginalName());
+        //         $vehicle->addMedia($picture) 
+        //                 ->toMediaCollection('vehicles');
+        //     }
+        // }
+
+        //V3
+        if ($request->hasFile('pictures')) {
+            foreach ($request->file('pictures') as $picture) {
+                $vehicle
+                    ->addMedia($picture)
+                    ->toMediaCollection('vehicles'); // "images" est ton nom de collection
             }
         }
 
@@ -111,7 +122,8 @@ class VehicleController extends Controller
             'description' => 'nullable|string|max:1000',
             'price' => 'required|numeric|min:0',
             'stock' => 'nullable|integer',
-            'picture' => 'required|file|image|max:5120|mimes:jpeg,png,jpg,gif,svg',
+            'pictures' => 'sometimes|array',
+            'pictures.*' => 'file|image|max:5120|mimes:jpeg,png,jpg,gif,svg',
             'brand' => 'required|string|max:255',
             'model' => 'required|string|max:255',
             'fuel' => 'required|string|max:255',
@@ -126,15 +138,20 @@ class VehicleController extends Controller
         $vehicle->update($data);
 
         // Vérifier si une nouvelle image a été téléchargée
-        if ($request->hasFile('picture')) {
+        if ($request->hasFile('pictures')) {
             // Supprimer l'ancienne image
             $vehicle->clearMediaCollection('vehicles');
 
             // Ajouter la nouvelle image
-            $vehicle->addMediaFromRequest('picture')->toMediaCollection('vehicles');
+            // $vehicle->addMediaFromRequest('picture')->toMediaCollection('vehicles');
+            foreach ($request->file('pictures') as $picture) {
+                $vehicle->addMedia($picture)->toMediaCollection('vehicles');
+            }
         }
+        
 
         return redirect()->route('vehicles.index')->with('success', __('Vehicle updated successfully.'));
+        
     }
 
     /**

@@ -15,6 +15,7 @@ class JobOffer extends Model
         'type', // e.g., full-time, part-time, contract
         'requirements', // e.g., education, experience
         'responsibilities', // e.g., tasks and duties
+        'why_join_us',
         'posted_at',
         'expires_at',
     ];
