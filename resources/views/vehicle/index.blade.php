@@ -18,7 +18,7 @@
             <table class="details">
                 <thead>
                     <tr>
-                        <th>{{ __('picture') }}</th>
+                        <th>{{ __('pictures') }}</th>
                         <th>{{ __('brand') }}</th>
                         <th>{{ __('model') }}</th>
                         <th>{{ __('year') }}</th>

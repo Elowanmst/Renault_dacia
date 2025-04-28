@@ -41,6 +41,10 @@
                         <p><i class="fas fa-tasks"></i> {{ $jobOffer->responsibilities }}</p>
                     @endif
 
+                    @if (!empty($jobOffer->why_join_us))
+                        <p><i class="fas fa-star"></i> <strong>{{ __('Why join us (advantages)') }}:</strong> {{ $jobOffer->why_join_us }}</p>
+                    @endif
+
                     @if (!empty($jobOffer->posted_at))
                         <p><i class="fas fa-calendar-plus"></i> {{ $jobOffer->posted_at }}</p>
                     @endif

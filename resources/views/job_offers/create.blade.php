@@ -79,6 +79,13 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
+            <div class="form-group">
+                <label for="why_join_us">{{ __('Why join us (advantages)') }}</label>
+                <textarea name="why_join_us" class="form-control" rows="5">{{ old('why_join_us') }}</textarea>
+                @error('why_join_us')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
 
             <button type="submit" class="btn btn-primary btn-form">{{ __('create') }}</button>
         </form>

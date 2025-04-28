@@ -67,9 +67,16 @@
             <label for="description">{{ __('description') }}</label>
             <textarea name="description" class="form-control" rows="5"></textarea>
         </div>
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="picture">Image</label>
             <input type="file" name="picture[]" id="picture" class="form-control" accept="image/*" multiple>
+        </div> --}}
+        <div class="form-group">
+            <label for="pictures">{{ __('pictures') }}</label>
+            <input type="file" name="pictures[]" class="form-control" multiple>
+            @error('pictures.*')
+                <span class="text-danger">{{ $message }}</span>
+            @enderror
         </div>
         
         <button type="submit" class="btn btn-primary">{{ __('create') }}</button>

@@ -49,7 +49,7 @@
         </div>
         
         <div class="form-group">
-            <label for="picture">{{ __('picture') }}</label>
+            <label for="pictures">{{ __('pictures') }}</label>
 
             @if ($vehicle->getFirstMediaUrl('vehicles', 'thumb'))
             <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'thumb') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}">

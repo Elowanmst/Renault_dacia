@@ -4,12 +4,17 @@
 
 <div class="vehicle-container">
     
-    <div class="vehicleImg">
+    {{-- <div class="vehicleImg">
         @if ($vehicle->getFirstMediaUrl('vehicles', 'show'))
             <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'show') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}">
         @else
             <p>{{ __('No image available') }}</p>
         @endif
+    </div> --}}
+    <div class="vehicleImg">
+        @foreach ($vehicle->getMedia('vehicles') as $media)
+            <img src="{{ $media->getUrl('show') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}" class="vehicle-image">
+        @endforeach
     </div>
 
     <div>
