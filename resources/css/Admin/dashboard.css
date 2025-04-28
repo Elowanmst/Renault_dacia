@@ -17,6 +17,14 @@ body {
     gap: 60px;
 }
 
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
 /* Sidebar */
 .sidebar {
     width: 250px;

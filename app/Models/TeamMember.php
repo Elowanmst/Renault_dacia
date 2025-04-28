@@ -32,6 +32,12 @@ class TeamMember extends Model implements HasMedia
             ->height(100)
             ->sharpen(10)
             ->performOnCollections('profile_pictures');
+            
+        $this->addMediaConversion('team-member-thumbnail')
+            ->width(50)
+            ->height(50)
+            ->sharpen(10)
+            ->performOnCollections('profile_pictures');
     }
 
 
