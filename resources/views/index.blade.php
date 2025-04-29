@@ -30,11 +30,13 @@ $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background', 'homepag
 </section>
 
 
-<section id="service">
+<section id="vehicles">
     <h2>Nos Véhicules</h2>
     
     
-    <h3>Nos véhicules d'occasion</h3>
+    @if ($vehicles->where('type', 'used')->isNotEmpty())
+        <h3>Nos véhicules d'occasion</h3>
+    @endif
     <div class="carousel-container">
         <button class="prev">❮</button>
         <div class="carousel">
@@ -57,7 +59,9 @@ $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background', 'homepag
         <button class="next">❯</button>
     </div>
     
-    <h3>Nos véhicules neuf</h3>
+    @if ($vehicles->where('type', 'new')->isNotEmpty())
+        <h3>Nos véhicules neuf</h3>
+    @endif
     <div class="carousel-container">
         <button class="prev">❮</button>
         <div class="carousel">
@@ -80,13 +84,15 @@ $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background', 'homepag
         <button class="next">❯</button>
     </div>
     
-    <h3>Expert ZE</h3>
-    
+    @if ($vehicles->where('fuel', 'electric')->isNotEmpty())
+        <h3>Expert ZE</h3>
+    @endif
+
     <div class="carousel-container">
         <button class="prev">❮</button>
         <div class="carousel">
             @foreach ($vehicles->where('fuel', 'electric') as $vehicle)
-            <div class="card-vehicle">
+            <div class="card-vehicle" onclick="window.location='{{ route('vehicles.show', $vehicle->id) }}'">
                 <h4>{{ $vehicle->brand }} {{ $vehicle->model }}</h4>
                 <img src="{{ $vehicle->getFirstMediaUrl('vehicles', 'large') }}" alt="{{ $vehicle->brand }} {{ $vehicle->model }}">
                 {!! \Parsedown::instance()->text($vehicle->description) !!}
@@ -143,7 +149,9 @@ $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background', 'homepag
         </div>
     </div>
     
-    <div class="solution-content">
+    @if ($services->isNotEmpty())
+    <div id="services">
+        <div class="solution-content">
         <div class="solution-text">
             <h3 class="wh">NOS SERVICES</h3>
         </div>
@@ -157,6 +165,9 @@ $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background', 'homepag
             @endforeach
         </div>
     </div>
+    </div>
+    @endif
+    
     
     
     

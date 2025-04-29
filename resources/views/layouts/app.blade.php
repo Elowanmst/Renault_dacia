@@ -30,10 +30,10 @@
         <ul class="nav-links list">
 
             @auth
-                <li><a href="#service">Nos services</a></li>
-                <li><a href="#garage">Votre garage</a></li>
+                <li><a href="{{route('index')}}#vehicles">Nos véhicules</a></li>
+                <li><a href="{{route('index')}}#garage">Votre garage</a></li>
                 <li><a href="{{ route('recrutement') }}">Recrutement</a></li>
-                <li><a href="#loc">Nous trouver</a></li>
+                <li><a href="{{route('index')}}#loc">Nous trouver</a></li>
                 <li><a href="{{ route('admin') }}">Admin</a></li>
                 <li>
                     <form method="POST" action="{{ route('logout') }}">
@@ -44,10 +44,11 @@
 
             @else
                 <li><a href="{{ route('index') }}">Accueil</a></li>
-                <li><a href="#service">Nos services</a></li>
-                <li><a href="#garage">Votre garage</a></li>
+                <li><a href="{{route('index')}}#vehicles">Nos véhicules</a></li>
+                <li><a href="{{route('index')}}#garage">Votre garage</a></li>
+                <li><a href="{{route('index')}}#services">Nos services</a></li>
                 <li><a href="{{ route('recrutement') }}">Recrutement</a></li>
-                <li><a href="#loc">Nous trouver</a></li>
+                <li><a href="{{route('index')}}#loc">Nous trouver</a></li>
             @endauth
         </ul>
     </nav>

@@ -78,6 +78,9 @@ class HoraireController extends Controller
 
         Horaire::where('id', $id)->update($data);
 
+        // Clear the cache for the updated Horaire
+        cache()->forget("horaire_{$id}");
+
         return redirect()->route('horaires.index');
     }
 

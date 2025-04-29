@@ -121,6 +121,20 @@
             <span class="text-danger">{{ $message }}</span>
             @enderror
         </div>
+
+        <div class="form-group">
+            <label for="pictures">{{ __('pictures') }}</label>
+            <input type="file" name="pictures[]" class="form-control" multiple required>
+            @error('pictures.*')
+                <span class="text-danger">{{ $message }}</span>
+            @enderror
+            <div class="info-icon">
+                <i class="fas fa-info-circle"></i>
+                <div class="tooltip">
+                    <p>Formats acceptés : JPEG, PNG, JPG, GIF, SVG. Taille maximale : <strong>5 Mo.</strong> <br> Image au format <strong>paysage</strong> recommandée.</p>
+                </div>
+            </div>
+        </div>
         
         
         
