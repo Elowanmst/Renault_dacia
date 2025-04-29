@@ -21,9 +21,44 @@
         <button class="next-show">❯</button>
     </div>
 
+
+    <h1>{{ $vehicle->model }}</h1>
+    <div class="vehicleInfo">
+        <div class="flex">
+            <div class="vehicle-info">
+                @if (!empty($vehicle->brand))
+                <p><i class="fas fa-industry"></i> {{ $vehicle->brand }}</p>
+                @endif
+                @if (!empty($vehicle->year))
+                <p><i class="fas fa-calendar-alt"></i> {{ $vehicle->year }}</p>
+                @endif
+                @if (!empty($vehicle->price))
+                <p><i class="fas fa-euro-sign"></i> {{ $vehicle->price }} €</p>
+                @endif
+            </div>
+            <div class="vehicle-info">
+                @if (!empty($vehicle->mileage))
+                <p><i class="fas fa-road"></i> {{ $vehicle->mileage }} km</p>
+                @endif
+                @if (!empty($vehicle->fuel))
+                <p><i class="fas fa-gas-pump"></i> {{ $vehicle->fuel }}</p>
+                @endif
+                @if (!empty($vehicle->transmission))
+                <p><i class="fas fa-cogs"></i> {{ $vehicle->transmission }}</p>
+                @endif
+            </div>
+        </div>
+        @if (!empty($vehicle->description))
+        <p><i class="fas fa-align-left"></i> {{ $vehicle->description }}</p>
+        @endif
+        
+        <p><small><i class="fas fa-clock"></i> {{ __('created at') }} {{ $vehicle->created_at->format('M d, Y') }}</small></p>
+    </div>
+
+    
     
 
-    <div>
+    {{-- <div>
         <h1 class="">{{ $vehicle->brand }} {{ $vehicle->model }}</h1>
         <h3>{{ $vehicle->price }} €</h3>
     </div>
@@ -40,7 +75,7 @@
         
         <p><small>{{ __('Added at') }} {{ $vehicle->created_at->format('M d, Y') }}</small></p>
     </div>
-    
+     --}}
 </div>
 
 <a href="{{ route('index') }}#service" class="btn-back">Retour</a>

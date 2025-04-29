@@ -39,7 +39,7 @@ class VehicleController extends Controller
         $data = $request->validate([
             'name' => 'nullable|string|max:255',
             'description' => 'nullable|string|max:1000',
-            'price' => 'required|numeric|min:0',
+            'price' => 'required|min:0|numeric',
             'stock' => 'nullable|integer',
             'pictures' => 'required|array', 
             'pictures.*' => 'image|mimes:jpeg,png,jpg,gif,svg', // Chaque image validée

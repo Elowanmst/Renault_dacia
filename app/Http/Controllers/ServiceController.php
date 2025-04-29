@@ -34,7 +34,7 @@ class ServiceController extends Controller
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'id' => 'nullable',
-            'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
             'description' => 'nullable|string',
         ]);
 
