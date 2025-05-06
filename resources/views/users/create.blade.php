@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('title', 'Garage Renault - Créer un utilisateur')
+
 @section('styles')
     @vite(['resources/css/admin/dashboard.css'])
 @endsection

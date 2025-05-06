@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Garage Renault - Connexion')
+
 @section('content')
 
     <div style="display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">

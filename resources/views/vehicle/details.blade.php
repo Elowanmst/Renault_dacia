@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('title', 'Garage Renault - ' . $vehicle->model)
+
 @section('styles')
 @vite('resources/css/admin/dashboard.css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">

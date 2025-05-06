@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Garage Renault - Réinitialiser le mot de passe')
+
 @section('content')
 <div class="flex items-center justify-center min-h-screen bg-gray-100">
     <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-md">

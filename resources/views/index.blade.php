@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'RENAULT - Voitures neuves et d\'occasion | Rond-Point de l\'Europe')
+
 @section('content')
 
 
@@ -248,7 +250,16 @@ $backgroundUrl = $homepage && $homepage->getFirstMediaUrl('background', 'homepag
 <footer>
     <p>© 2025 - Garage du Centre RENAULT | DACIA  </p>
     <br>
-    <p>created by ec-craft.fr  </p>
+    <div class="footer-links">
+        <a href="{{ route('index') }}">Accueil</a>
+        <a href="{{ route('recrutement') }}">Recrutement</a>
+        <a href="{{ route('vehicles.index') }}">Véhicules</a>
+        <a href="{{ route('services.index') }}">Services</a>
+        <a href="{{ route('exceptional-events.index') }}">Événements</a>
+        <p><a href="{{ route('sitemap') }}">Plan du site</a></p>
+    </div>
+    
+    <p>Conception et développement : <a href="https://ec-craft.fr" target="_blank">ec-craft.fr</a></p>
     
 </footer>
 

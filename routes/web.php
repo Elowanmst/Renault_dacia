@@ -12,6 +12,7 @@ use App\Http\Controllers\ExceptionalClosureController;
 use App\Http\Controllers\ExceptionalEventController;
 use App\Http\Controllers\TeamMemberController;
 use App\Http\Controllers\JobOfferController;
+use App\Http\Controllers\SitemapController;
 
 
 // Auth routes
@@ -64,3 +65,5 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('/homepage/background/reset', [HomepageController::class, 'resetBackground'])->name('admin.homepage.resetBackground');
 });
 
+// route pour la sitemap
+Route::get('/sitemap', [SitemapController::class, 'index'])->name('sitemap');

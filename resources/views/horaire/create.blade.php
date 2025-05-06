@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('title', 'Garage Renault - Ajouter des horaires d\'ouverture')
+
 @section('styles')
     @vite(['resources/css/admin/horaire.css'])
     @vite(['resources/css/admin/dashboard.css']) 
