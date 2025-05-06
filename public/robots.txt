@@ -1,2 +1,23 @@
 User-agent: *
-Disallow:
+Disallow: /admin/
+Disallow: /storage/
+Disallow: /bootstrap/
+Disallow: /config/
+Disallow: /database/
+Disallow: /resources/
+Disallow: /routes/
+Disallow: /tests/
+Disallow: /vendor/
+Disallow: /app/
+Disallow: /.env
+Disallow: /.git/
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /phpunit.xml
+Disallow: /vite.config.js
+
+# Allow search engines to crawl the public assets
+Allow: /public/
+
+# Sitemap location
+Sitemap: https://renault_dacia.test/sitemap.xml

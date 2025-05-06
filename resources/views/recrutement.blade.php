@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Garage Renault - Recrutement')
+
 @section('content')
 
     <h1 class="titleRecru">Nous recrutons</h1>

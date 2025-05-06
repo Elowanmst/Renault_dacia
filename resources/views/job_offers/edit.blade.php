@@ -1,7 +1,8 @@
 @extends('layouts.admin')
 
+@section('title', 'Garage Renault - Modifier une offre d\'emploi')
+
 @section('styles')
-    @vite(['resources/css/admin/service.css'])
     @vite(['resources/css/admin/dashboard.css'])
 @endsection
 
@@ -10,7 +11,7 @@
 
     <a class="back-btn" href="{{ url()->previous() }}">{{ __('back') }}</a>
 
-    <h1>{{ __('edit service') }}</h1>
+    <h1>{{ __('edit job offer') }}</h1>
     <form class="admin-form" action="{{ route('job_offers.update', $jobOffer->id) }}" method="POST">
         @csrf
         @method('PUT')

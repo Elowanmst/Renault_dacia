@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('title', 'Garage Renault - Modifier un service')
+
 @section('styles')
     @vite(['resources/css/admin/service.css'])
     @vite(['resources/css/admin/dashboard.css'])

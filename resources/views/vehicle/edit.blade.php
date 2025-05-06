@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('title', 'Garage Renault - ' . $vehicle->brand . ' ' . $vehicle->model)
+
 @section('styles')
 @vite(['resources/css/admin/vehicle.css'])
 @vite(['resources/css/admin/dashboard.css'])

@@ -1,7 +1,8 @@
 @extends('layouts.admin')
 
+@section('title', 'Garage Renault - Offres d\'emploi')
+
 @section('styles')
-    {{-- @vite(['resources/css/admin/service.css']) --}}
     @vite(['resources/css/admin/dashboard.css'])
 @endsection
 

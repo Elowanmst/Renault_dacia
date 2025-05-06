@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Garage Renault - Détails du véhicule')
+
 @section('content')
 
 <div class="vehicle-container">

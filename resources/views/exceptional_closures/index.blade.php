@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('title', 'Garage Renault - Fermetures exceptionnelles')
+
 @section('styles')
     @vite(['resources/css/admin/dashboard.css'])
 @endsection
